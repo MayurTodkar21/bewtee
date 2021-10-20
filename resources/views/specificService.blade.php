@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -25,44 +27,21 @@
     <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Information display
+        {{$service['title']}}
         </h2>
     </x-slot>
-
+    <p></p>
+        <img src="<?php echo $service['serviceImg']?>" alt="something">
+        <h3>service Category </h3><p>{{$service['serveCat']}}</p>
+        <h3>Location:</h3><p>{{$service['location']}}</p>
+        <h3>About:</h3><p>{{$service['about']}}</p>
+        <h3>policy:</h3><p>{{$service['policy']}}</p>
+        <h3>product:</h3><p>{{$service['product']}}</p>
+        <h3>price:</h3><p>{{$service['price']}}</p>  
    
-    @foreach($freelancers as $freelancer)
-    
-        <!--displaying data-->
-        <div style="width: 300px; height: 400px; border:1px solid black; margin: 5px">
-            <img src="
-            "alt="no">
-            <h3>'{{$freelancer['id']}}'</h3>
-            <h3>{{$freelancer['name']}}</h3>
-            <h3>tagline:</h3><p>{{$freelancer['tagline']}}</p>
-
-            <h3>Location:</h3><p>{{$freelancer['location']}}</p>
-            <h3>type of influencer:</h3><p>{{$freelancer['typeIn']}}</p>
-            <h3>Rating:</h3><p>{{$freelancer['rating']}}</p>
-            <h3>Location:</h3><p>{{$freelancer['location']}}</p>
-            <h3>Skills: </h3><p>{{$freelancer['skills']}}</p>
-            <h3>Travel: </h3><p>{{$freelancer['travel']}}</p>
-            <a href='display/<?php echo $freelancer['id'] ?>' class="bg-primary " style="padding: 5px; color:aliceblue; border-radius:5px" > View </a>    
-
-        </div>
-        
-
-       @endforeach
+   
        </x-app-layout>
                 
     </body>
 </html>
        
-
-      
-       
-
-        
-        
-        
-    
-  

@@ -11,6 +11,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\BankingController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\uniqueFreelancer;
+use App\Http\Controllers\particularService;
 use App\Models\Freelancer;
 
 
@@ -80,7 +81,8 @@ Route::get("review", function(){
 Route::get('display' , [DisplayController::class , 'display']);
 Route::get('serviceshow',[ServiceDisplayController::class,'displayService']);
 Route::get('dashboard/edit', [AccountController::class,'account']);
-Route::get('/info', [uniqueFreelancer::class,'getSpecific']);
+Route::get('display/{id}', [uniqueFreelancer::class,'getSpecific']);
+Route::get('serviceshow/{sno}', [particularService::class,'getService']);
 
 
 Route::post('freelancer', [UserController::class, 'getData']);
