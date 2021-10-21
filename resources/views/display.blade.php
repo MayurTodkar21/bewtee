@@ -22,12 +22,11 @@
         </style>
     </head>
     <body class="antialiased bodyColor">
-    <x-app-layout>
-    <x-slot name="header">
+    
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
         Information display
         </h2>
-    </x-slot>
+    
 
    
     @foreach($freelancers as $freelancer)
@@ -52,7 +51,7 @@
         
 
        @endforeach
-       </x-app-layout>
+      
                 
     </body>
 </html>

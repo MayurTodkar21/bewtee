@@ -13,8 +13,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\uniqueFreelancer;
 use App\Http\Controllers\particularService;
 use App\Models\Freelancer;
-
-
+use App\Models\Service;
 use App\Models\User;
 
 
@@ -71,8 +70,9 @@ Route::get("service", function(){
         return view('welcome');
     }
 });
-Route::get("review", function(){
-    return view('servicereview');
+Route::get("/{id}/review", function($id){
+    $service = Service::find($id);
+    return view('servicereview', ['service' => $service]);
 });
 
 
@@ -88,4 +88,4 @@ Route::get('serviceshow/{sno}', [particularService::class,'getService']);
 Route::post('freelancer', [UserController::class, 'getData']);
 Route::post('service',[ServiceController::class, 'addDetail']);
 
-Route::post('review', [ReviewController::class, 'addReview']);
+Route::post('/{id}/review', [ReviewController::class, 'addReview']);

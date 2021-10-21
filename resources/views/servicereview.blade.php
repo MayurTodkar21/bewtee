@@ -1,6 +1,11 @@
 <h1>Service Review</h1>
-<form action ="review" method="POST">
+
+<form action ="/{id}/review" method="POST">
     @csrf
+    <div>
+        <label for="id">Service id</label>
+        <input name = 'id' value="<?php echo $service['id'] ?>" disabled>
+    </div>
     <div>
         <label for="overall">Overall Rating</label>
         <input type ="number"  name="overall" min="0" max = "5">

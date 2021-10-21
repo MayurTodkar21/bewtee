@@ -23,13 +23,12 @@
         </style>
     </head>
     <body class="antialiased bodyColor">
-    <x-app-layout>
-    <x-slot name="header">
+    
+    
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
         {{$freelancer->name}}
         </h2>
-    </x-slot>
-    <p></p>
+    
 <p>{{$freelancer->id}}</p>
 <p>{{$freelancer->location}}</p>
 <p>{{$freelancer->tagline}}</p>
@@ -44,7 +43,6 @@
 
    
    
-       </x-app-layout>
                 
     </body>
 </html>

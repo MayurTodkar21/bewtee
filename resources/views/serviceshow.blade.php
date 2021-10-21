@@ -22,12 +22,11 @@
         </style>
     </head>
     <body class="antialiased bodyColor">
-    <x-app-layout>
-    <x-slot name="header">
+    
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
         Services display
         </h2>
-    </x-slot>
+    
 
    
     @foreach($services as $service)
@@ -40,11 +39,11 @@
         <h3>policy:</h3><p>{{$service['policy']}}</p>
         <h3>product:</h3><p>{{$service['product']}}</p>
         <h3>price:</h3><p>{{$service['price']}}</p>  
-        <h3>Please leave a review</h3>
+        
         <?php echo $service['serviceImg']?>
         <br>
         <a href='serviceshow/<?php echo $service['id'] ?>' class="bg-primary " style="padding: 5px; color:aliceblue; border-radius:5px" > View </a>
-        <button><a href= "review">Click Me!!</a></button>
+        
 
 
     </div>
@@ -56,7 +55,12 @@
     
     @endforeach
     
-    </x-app-layout>
+  
                 
     </body>
 </html>
+                   
+
+
+    
+   

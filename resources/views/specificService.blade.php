@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Freelancer Info required</title>
+        <title>Service</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -30,17 +30,42 @@
         {{$service['title']}}
         </h2>
     </x-slot>
-    <p></p>
-        <img src="<?php echo $service['serviceImg']?>" alt="something">
-        <h3>service Category </h3><p>{{$service['serveCat']}}</p>
-        <h3>Location:</h3><p>{{$service['location']}}</p>
-        <h3>About:</h3><p>{{$service['about']}}</p>
-        <h3>policy:</h3><p>{{$service['policy']}}</p>
-        <h3>product:</h3><p>{{$service['product']}}</p>
-        <h3>price:</h3><p>{{$service['price']}}</p>  
+        <div>
+        <?php echo $service['id'] ?>
+            <img src="<?php echo $service['serviceImg']?>" alt="something">
+            <h3>service Category </h3><p>{{$service['serveCat']}}</p>
+            <h3>Location:</h3><p>{{$service['location']}}</p>
+            <h3>About:</h3><p>{{$service['about']}}</p>
+            <h3>policy:</h3><p>{{$service['policy']}}</p>
+            <h3>product:</h3><p>{{$service['product']}}</p>
+            <h3>price:</h3><p>{{$service['price']}}</p> 
+            
+        </div>
+        <hr>
+        
+        <div>
+             <h1>Review </h1>
+             @if($review['id'] ==  $service['id'])
+             <p>overall rating: {{$review['overall']}}</p>
+             <p>on time: {{$review['onTime']}}</p>
+             <p>message: {{$review['message']}}</p>
+             @elseif($review['id'] == NULL)
+             <p>No reviews</p>
+             @endif
+
+
+        </div>
+     
+        <hr>
+        <h3>Please leave a review</h3>
+        <button><a href= "/<?php echo $service['id'] ?>/review">Click Me!!</a></button>
+        
+
+
    
    
        </x-app-layout>
+       
                 
     </body>
 </html>
