@@ -12,7 +12,7 @@ class particularService extends Controller
     function getService($id){
         $service = Service::find($id);
         $sno = $id;
-        $review = Review::findAll($id);
+        $review = Review::find($id);
         return view('specificService', ['service' =>$service, 'id' =>$id , 'review' => $review]);
     }
 }
