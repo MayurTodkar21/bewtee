@@ -41,7 +41,8 @@
 <p>{{$freelancer->productUsed}}</p>
 <p>{{$freelancer->prodilePhote}}</p>
 
-   
+
+   <h1 style="border : 2px solid black; padding: 10px ;width: 80px"><a href='/' >Contact</a><h1>
    
                 
     </body>

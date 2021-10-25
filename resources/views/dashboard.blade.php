@@ -10,15 +10,36 @@
 
     <div class="py-12">
     </x-slot>
+    <?php
+
+
+
+  $registered = TRUE;
+ ?>
     
 
-    
+   
     
     
          <!--if you are a freelancer-->                        
         @if($user->preferrence =='freelancer') 
         <div>
-        <a href="freelancer" style="border: 1px solid black; padding:1px">Register as Freelancer</a>
+            @foreach($freelancer as $person)
+              @if($person->member_id == $user->id)
+              <a href={{"edit/".$user['id']}}  style="border: 1px solid black; padding:1px">Edit</a>
+              <?php $registered = FALSE;?>
+              
+              
+              @endif
+             
+
+            @endforeach
+            @if($registered == TRUE)
+
+            <a href="freelancer" style="border: 1px solid black; padding:1px"  >Register as Freelancer</a>
+            @endif
+        
+       
         <a href="serviceshow" style="border: 1px solid black; padding:1px"> view Services</a>
              <div class="py-12">
                  <h1>profile account:</h1>
@@ -68,7 +89,13 @@
         @elseif($user->preferrence =='client')
         <div>
             <div class="py-12">
-            <a href="service" style="border: 1px solid black; padding:5px"> Add your service</a>
+               
+        
+            
+                <a href="service" style="border: 1px solid black; padding:5px"> Add your service</a>
+                <a href={{"edit/".$user['id']}}>Edit</a>
+                
+            
             <a href="display" style="border: 1px solid black; padding:5px">view Freelancers</a>
             </div>
             <div class="py-12">

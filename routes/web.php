@@ -10,6 +10,7 @@ use App\Http\Controllers\DisplayController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\BankingController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\editController;
 use App\Http\Controllers\uniqueFreelancer;
 use App\Http\Controllers\particularService;
 use App\Models\Freelancer;
@@ -35,9 +36,10 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    $user = Auth::user(); 
-    $freelancer= Freelancer::all(); 
-    return view('dashboard', ['user'=>$user, 'freelancer' =>$freelancer]);
+    $user = Auth::user();
+    $freelancer= DB::table('freelancers')->where('member_id' ,'=', $user['id'])->get();
+    $service = Service::all();
+    return view('dashboard', ['user'=>$user, 'freelancer' =>$freelancer, 'service' =>$service]);
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/edit', [BankingController::class,'bankDetail']);
@@ -45,7 +47,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/edit', [Banking
 Route::get("freelancer",function(){
     if (Auth::check()) {
         // The user is logged in...
-        $user = Auth::user();  
+        $user = Auth::user();
+
         
         
         return view('freelancer',['user'=>$user]);
@@ -83,7 +86,7 @@ Route::get('serviceshow',[ServiceDisplayController::class,'displayService']);
 Route::get('dashboard/edit', [AccountController::class,'account']);
 Route::get('display/{id}', [uniqueFreelancer::class,'getSpecific']);
 Route::get('serviceshow/{sno}', [particularService::class,'getService']);
-
+Route::get('edit/{id}', [editController::class,'editData']);
 
 Route::post('freelancer', [UserController::class, 'getData']);
 Route::post('service',[ServiceController::class, 'addDetail']);

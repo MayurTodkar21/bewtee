@@ -11,6 +11,6 @@ class Service extends Model
     public $timestamps =false;
     function serviceData()
     {
-        return $this->hasOne(User::class);
+        return $this->hasOne('App\Models\Service');
     }
 }

@@ -56,8 +56,8 @@
             <div class="row"> 
             @foreach($freelancers as $freelancer)
                 <div class ="col-sm-6" style="width: 300px; height: 250px; border:1px solid black; margin: 5px">
-                    <img src="
-                    "alt="no">
+                    <img src="storage/{{$freelancer['profilePhote']}}">
+                    
                     <h3>'{{$freelancer['id']}}'</h3>
                     <h3>{{$freelancer['name']}}</h3>
                     <h3>tagline:{{$freelancer['tagline']}}</h3>

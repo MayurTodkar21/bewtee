@@ -36,7 +36,7 @@
             <div class= "form-group">
                 <label>Profile Photo</label>
                 <input type ="file" name="file" placeholder="enter image url"> 
-                       </div>
+            </div>
 
 
 
@@ -140,10 +140,11 @@
             <div class= "form-group">
                 budget
             </div>
+            <!--
             <div>
                 <label for="photos[]">Upload your portfolio images</label>
                 <input type="file" name="photos[]" multiple>
-            </div>
+            </div>-->
             <div class= "form-group">
                 <label>Profile F&Qs</label>
                 <input type="text" name='fnq'>
