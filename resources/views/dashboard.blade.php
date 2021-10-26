@@ -11,16 +11,8 @@
     <div class="py-12">
     </x-slot>
     <?php
-
-
-
-  $registered = TRUE;
- ?>
-    
-
-   
-    
-    
+      $registered = TRUE;
+    ?>
          <!--if you are a freelancer-->                        
         @if($user->preferrence =='freelancer') 
         <div>
@@ -40,7 +32,7 @@
             @endif
         
        
-        <a href="serviceshow" style="border: 1px solid black; padding:1px"> view Services</a>
+            <a href="serviceshow" style="border: 1px solid black; padding:1px"> view Services</a>
              <div class="py-12">
                  <h1>profile account:</h1>
                  <img src="
@@ -88,15 +80,24 @@
          <!--if you are a client/employee-->
         @elseif($user->preferrence =='client')
         <div>
+              
             <div class="py-12">
+            @foreach($service as $unique)
+              @if($unique->member_id == $user->id)
+              <a href={{"editservice/".$user['id']}} style="border: 1px solid black; padding:5px">Edit</a>
+              <?php $registered = FALSE;?>
+              
+              
+              @endif
+              @endforeach
                
-        
+            @if($registered == TRUE)
+            <a href="service" style="border: 1px solid black; padding:5px"> Add your service</a>
+            @endif
             
-                <a href="service" style="border: 1px solid black; padding:5px"> Add your service</a>
-                <a href={{"edit/".$user['id']}}>Edit</a>
+               
                 
-            
-            <a href="display" style="border: 1px solid black; padding:5px">view Freelancers</a>
+                <a href="display" style="border: 1px solid black; padding:5px">view Freelancers</a>
             </div>
             <div class="py-12">
                  <h1>Account details:</h1>
