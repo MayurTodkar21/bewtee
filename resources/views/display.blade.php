@@ -45,6 +45,17 @@
                 </div>
             @endif
     </div>
+    <div >
+    <form action='/' method="POST">
+    @csrf
+    <input type="text" class="form-control" style="width: 350px ; height : 25px;" name="search" placeholder="search by name, location, type of influencer">
+    <button class="btn btn-primary"  type="submit">Search</button>
+
+    </form>
+    
+
+    </div>
+    
     
         
 

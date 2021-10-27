@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Freelancer Info required</title>
+        <title>freelancer</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -23,12 +23,17 @@
         </style>
     </head>
     <body class="antialiased bodyColor">
-    
-    
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    <x-app-layout>
+    <x-slot name="header">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
         {{$freelancer->name}}
         </h2>
     
+        
+    </x-slot>
+    
+    
+        
 <p>{{$freelancer->id}}</p>
 <p>{{$freelancer->location}}</p>
 <p>{{$freelancer->tagline}}</p>
@@ -42,10 +47,13 @@
 <p>{{$freelancer->prodilePhote}}</p>
 
 
-   <h1 style="border : 2px solid black; padding: 10px ;width: 80px"><a href='/' >Contact</a><h1>
+   <h1 style="border : 2px solid black; padding: 10px ;width: 80px"><a href='/message'>Contact</a><h1>
    
+                
+  
+       
+
+    </x-app-layout>
                 
     </body>
 </html>
-       
-
