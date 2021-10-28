@@ -39,6 +39,7 @@
             <h3>policy:</h3><p>{{$service['policy']}}</p>
             <h3>product:</h3><p>{{$service['product']}}</p>
             <h3>price:</h3><p>{{$service['price']}}</p> 
+            <a class="bg-primary " style="padding: 5px; color:aliceblue; border-radius:5px" >Book Now</a>
             
         </div>
         <hr>

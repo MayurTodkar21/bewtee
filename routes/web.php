@@ -18,8 +18,8 @@ use App\Http\Controllers\Homecontroller;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\uniqueFreelancer;
 use App\Http\Controllers\particularService;
-
-
+use App\Http\Controllers\SendMessageController;
+use App\Http\Controllers\ViewMessageController;
 use App\Models\Freelancer;
 use App\Models\Service;
 use App\Models\User;
@@ -84,7 +84,9 @@ Route::get("/{id}/review", function($id){
     $service = Service::find($id);
     return view('servicereview', ['service' => $service]);
 });
-
+Route::get("/success", function(){
+    return view('/success');
+});
 
 
 
@@ -95,7 +97,8 @@ Route::get('display/{id}', [uniqueFreelancer::class,'getSpecific']);
 Route::get('serviceshow/{sno}', [particularService::class,'getService']);
 Route::get('edit/{id}', [editController::class,'editData']);
 Route::get('editservice/{id}', [serviceEditController::class, 'editServiceData']);
-Route::get('/message', [Homecontroller::class, 'sendMessage']);
+Route::get('/message/{id}', [Homecontroller::class, 'sendMessage']);
+Route::get('/viewmessage', [ViewMessageController::class,'viewMessage']);
 
 Route::post('freelancer', [UserController::class, 'getData']);
 Route::post('service',[ServiceController::class, 'addDetail']);
@@ -105,3 +108,4 @@ Route::post('/serviceshow', [SearchController::class, 'searchService']);
 Route::post('/{id}/review', [ReviewController::class, 'addReview']);
 Route::post('/editservice' , [serviceEditController::class, 'updateService']);
 Route::post('/edit/edit', [editController::class, 'updateData']);
+Route::post('/message', [SendMessageController::class, 'sendMessage']);

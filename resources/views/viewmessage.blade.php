@@ -1,11 +1,12 @@
 
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>freelancer</title>
+        <title>Service</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -25,35 +26,24 @@
     <body class="antialiased bodyColor">
     <x-app-layout>
     <x-slot name="header">
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        {{$freelancer->name}}
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            Messages
         </h2>
-    
-        
     </x-slot>
-    
-    
+            @foreach($messages as $message)
+            <div>
+            {{$message->message}}
+
+
+            </div>
+            <hr>
+           
+            @endforeach
         
-<p>{{$freelancer->id}}</p>
-<p>{{$freelancer->location}}</p>
-<p>{{$freelancer->tagline}}</p>
-<p>{{$freelancer->typeIn}}</p>
-
-<p>{{$freelancer->experience}}</p>
-<p>{{$freelancer->category}}</p>
-<p>{{$freelancer->skills}}</p>
-<p>{{$freelancer->travel}}</p>
-<p>{{$freelancer->productUsed}}</p>
-<p>{{$freelancer->prodilePhote}}</p>
-
-
-   <h1 style="border : 2px solid black; padding: 10px ;width: 80px"><a href={{'/message/'.$freelancer['id']}}>Contact</a><h1>
    
-                
-  
+       </x-app-layout>
        
-
-    </x-app-layout>
                 
     </body>
 </html>
+       

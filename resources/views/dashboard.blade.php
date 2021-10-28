@@ -33,6 +33,7 @@
         
        
             <a href="serviceshow" style="border: 1px solid black; padding:1px"> view Services</a>
+            <a href="/viewmessage" style="border: 1px solid black; padding:1px"> view messages</a>
              <div class="py-12">
                  <h1>profile account:</h1>
                  <img src="
@@ -92,12 +93,13 @@
               @endforeach
                
             @if($registered == TRUE)
-            <a href="service" style="border: 1px solid black; padding:5px"> Add your service</a>
+            <a href="service" style="border: 1px solid black; padding:5px"> Post a Job</a>
             @endif
             
                
                 
-                <a href="display" style="border: 1px solid black; padding:5px">view Freelancers</a>
+                <a href="display" style="border: 1px solid black; padding:5px">Hire Freelancers</a>
+                <a href="display" style="border: 1px solid black; padding:5px">Find Beauty Service</a>
             </div>
             <div class="py-12">
                  <h1>Account details:</h1>
