@@ -87,6 +87,9 @@ Route::get("/{id}/review", function($id){
 Route::get("/success", function(){
     return view('/success');
 });
+Route::get("/tips" , function(){
+    return view('tips');
+});
 
 
 
@@ -99,6 +102,8 @@ Route::get('edit/{id}', [editController::class,'editData']);
 Route::get('editservice/{id}', [serviceEditController::class, 'editServiceData']);
 Route::get('/message/{id}', [Homecontroller::class, 'sendMessage']);
 Route::get('/viewmessage', [ViewMessageController::class,'viewMessage']);
+Route::get('/delete/{id}', [ViewMessageController::class,'deleteMessage']);
+Route::get('/{id}', [HomeController::class, 'sendReply']);
 
 Route::post('freelancer', [UserController::class, 'getData']);
 Route::post('service',[ServiceController::class, 'addDetail']);
@@ -109,3 +114,4 @@ Route::post('/{id}/review', [ReviewController::class, 'addReview']);
 Route::post('/editservice' , [serviceEditController::class, 'updateService']);
 Route::post('/edit/edit', [editController::class, 'updateData']);
 Route::post('/message', [SendMessageController::class, 'sendMessage']);
+Route::post('/reply', [SendMessageController::class, 'sendMessage']);

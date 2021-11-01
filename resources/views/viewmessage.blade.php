@@ -29,10 +29,13 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             Messages
         </h2>
-    </x-slot>
+    </x-slot >
             @foreach($messages as $message)
-            <div>
+            <div style="margin-left: 60px">
             {{$message->message}}
+            <br>
+            <a style="border: 1px solid black; padding:1px" href = {{"/delete/".$message->id}} >Delete<a> 
+            <a style="border: 1px solid black; padding:1px" href ={{'/'.$message->id}} >Reply</a>
 
 
             </div>

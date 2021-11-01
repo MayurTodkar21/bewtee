@@ -48,9 +48,7 @@
     
     
     <!--displaying data-->
-    @if(empty($services))
-    fuckyou
-    @endif
+    
     
     <div class ="container">
         <div class="row"> 

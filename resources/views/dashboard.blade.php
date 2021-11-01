@@ -32,10 +32,12 @@
             @endif
         
        
-            <a href="serviceshow" style="border: 1px solid black; padding:1px"> view Services</a>
+            <a href="serviceshow" style="border: 1px solid black; padding:1px"> view Jobs</a> 
+            <a href='service' style = "border: 1px solid black; padding:1px">Post a Service</a>
             <a href="/viewmessage" style="border: 1px solid black; padding:1px"> view messages</a>
+            <a href="/tips" style="border: 1px solid black; padding:1px"> Freelancing Tips</a>
              <div class="py-12">
-                 <h1>profile account:</h1>
+                 <h1>profile account: {{$user->name}}</h1>
                  <img src="
                     "alt="no">
                     <h3>tagline:</h3>
@@ -100,6 +102,7 @@
                 
                 <a href="display" style="border: 1px solid black; padding:5px">Hire Freelancers</a>
                 <a href="display" style="border: 1px solid black; padding:5px">Find Beauty Service</a>
+                <a href="/viewmessage" style="border: 1px solid black; padding:1px"> view messages</a>
             </div>
             <div class="py-12">
                  <h1>Account details:</h1>

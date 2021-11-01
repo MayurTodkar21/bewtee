@@ -19,7 +19,10 @@ class SendMessageController extends Controller
         $message->message= $req->message;
         $message->freelancer_id = $req->freelancer_id;
         $message->client_id = $req->client_id;
+        $message->sender = $req->sender;
         $message->save();
         return redirect('/success');
     }
+
+    function sendReply(){}
 }

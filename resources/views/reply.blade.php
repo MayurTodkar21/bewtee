@@ -23,41 +23,42 @@
     </head>
     <body class="antialiased bodyColor">
     <x-app-layout>
-    
-    {{$user->name}}
-    <form action ="/message" method="POST">
+       
+    <form action ="/reply" method="POST">
     @csrf
-        <div>
-            <label for="name" hidden>freelancer's name</label>
-            <input name = "name"  value={{$freelancer->name}} >
+        
+    <div>
+            <label for="sender" hidden>sender</label>
+            <input type ="" name = "sender"  value= {{$message->name}}>
 
         </div>
-        <div>
-            <label for="name" hidden>sender's name</label>
-            <input name = "sender"  value={{$user->name}} >
-
-        </div>
-
+        
         <div>
             <label for="freelancer_id" hidden>freelancer's id</label>
-            <input name = "freelancer_id"  value={{$freelancer->id}} >
+            <input type ="" name = "freelancer_id"  value= {{$message->freelancer_id}}>
 
         </div>
         <div>
             <label for="freelancer_id" hidden>freelancer's id</label>
-            <input name = "client_id"  value={{$user->id}} >
+            <input type ="" name = "client_id"  value= {{$message->client_id}}>
+
+        </div>
+        <div>
+            <label for="name" hidden>Name of reciever</label>
+            <input type ="" name = "name"  value= {{$message->sender}}>
 
         </div>
        
 
-        <label for="message">Send {{$freelancer->name}} a Project Offer:</label>
+        <label for="message">Reply to Project Offer:</label>
         <br>
         <textarea name="message"  cols="30" rows="10" placeholder="Type message"></textarea>
         <br>
-        <small>Click the button to send the offer to this freelancer</small>
+        <small>Click the button to reply</small>
         <br>
         <button type="submit" class="btn btn-danger"> Submit </button>
     </form>
+   
     </x-app-layout>
     
 
