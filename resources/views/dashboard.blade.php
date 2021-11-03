@@ -1,7 +1,8 @@
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+           BEWTEE
         </h2>
         <div>
             <a href='/'>Home</a>
@@ -10,6 +11,7 @@
 
     <div class="py-12">
     </x-slot>
+    
     <?php
       $registered = TRUE;
     ?>
@@ -32,7 +34,7 @@
             @endif
         
        
-            <a href="serviceshow" style="border: 1px solid black; padding:1px"> view Jobs</a> 
+            <a href="viewjobs" style="border: 1px solid black; padding:1px"> view Jobs</a> 
             <a href='service' style = "border: 1px solid black; padding:1px">Post a Service</a>
             <a href="/viewmessage" style="border: 1px solid black; padding:1px"> view messages</a>
             <a href="/tips" style="border: 1px solid black; padding:1px"> Freelancing Tips</a>
@@ -94,9 +96,9 @@
               @endif
               @endforeach
                
-            @if($registered == TRUE)
-            <a href="service" style="border: 1px solid black; padding:5px"> Post a Job</a>
-            @endif
+           
+            <a href="job" style="border: 1px solid black; padding:5px"> Post a Job</a>
+
             
                
                 

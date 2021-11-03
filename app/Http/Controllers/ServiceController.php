@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Service;
 use App\Models\User;
+use App\Models\Job;
 
 
 class ServiceController extends Controller
@@ -31,4 +32,24 @@ class ServiceController extends Controller
         
 
     }
+    function addJob(Request $req){
+        $job = new Job;
+        $job->username = $req->username;
+        $job->user_id = $req->userid;;
+        $job->title = $req->title;
+        $job->level = $req->level;
+        $job->duration=$req->duration;
+        $job->type = $req->type;
+        $job->English_level = $req->EnglishLevel;
+        $job->location = $req->Location;
+        $job->job_type = $req->jobType;
+        $job->min_price = $req->minPrice;
+        $job->max_price = $req->maxPrice;
+        $job->detail = $req->detail;
+        $job->save();
+        return redirect('/success');
+        
+        
+    }
+    
 }

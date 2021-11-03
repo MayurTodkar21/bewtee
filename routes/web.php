@@ -41,6 +41,10 @@ use App\Models\User;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('job',function(){
+    $user = Auth::user();
+    return view('job', ['user' =>$user]);
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     $user = Auth::user();
@@ -95,6 +99,7 @@ Route::get("/tips" , function(){
 
 Route::get('display' , [DisplayController::class , 'display']);
 Route::get('serviceshow',[ServiceDisplayController::class,'displayService']);
+Route::get('viewjobs', [ServiceDisplayController::class,'viewJobs']);
 Route::get('dashboard/edit', [AccountController::class,'account']);
 Route::get('display/{id}', [uniqueFreelancer::class,'getSpecific']);
 Route::get('serviceshow/{sno}', [particularService::class,'getService']);
@@ -104,6 +109,7 @@ Route::get('/message/{id}', [Homecontroller::class, 'sendMessage']);
 Route::get('/viewmessage', [ViewMessageController::class,'viewMessage']);
 Route::get('/delete/{id}', [ViewMessageController::class,'deleteMessage']);
 Route::get('/{id}', [HomeController::class, 'sendReply']);
+
 
 Route::post('freelancer', [UserController::class, 'getData']);
 Route::post('service',[ServiceController::class, 'addDetail']);
@@ -115,3 +121,4 @@ Route::post('/editservice' , [serviceEditController::class, 'updateService']);
 Route::post('/edit/edit', [editController::class, 'updateData']);
 Route::post('/message', [SendMessageController::class, 'sendMessage']);
 Route::post('/reply', [SendMessageController::class, 'sendMessage']);
+Route::post('/job',[ServiceController::class, 'addJob']);
