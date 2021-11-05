@@ -1,15 +1,18 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
+
+<x-guest-layout >
+
+
+    <x-jet-authentication-card >
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+           <div class="register-font"> REGISTER FOR BEWTEEFULL EXPERIENCE</div>
         </x-slot>
 
-        <x-jet-validation-errors class="mb-4" />
+        <x-jet-validation-errors class="mb-4 form-style " />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" class="" action="{{ route('register') }}">
             @csrf
-
             <div>
+            
                 <x-jet-label for="name" value="{{ __('Name') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
@@ -68,4 +71,5 @@
             </div>
         </form>
     </x-jet-authentication-card>
+    
 </x-guest-layout>

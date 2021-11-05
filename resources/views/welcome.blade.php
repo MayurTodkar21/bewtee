@@ -58,7 +58,7 @@
                 <div class="dropdown">
                     <label class="menu-links"> I am looking for: </label>
                     <button class="btn btn-secondary btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         Freelancer/service
+                         Freelancers
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="display">Freelancers</a>

@@ -2258,7 +2258,7 @@ body{
 	background-color:gray;
 }
 .home-display{
-	height: 600px;
+	height: 700px;
 	background-image: url("/docs/homeimg.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -2284,7 +2284,14 @@ body{
 	font-weight: 100;
 	padding-left: 50px;
 	color:grey;
-
+}
+.test{
+	color: brown;
+}
+.register-font{
+	color: #014f86;
+	font-size:20px;
+	font-weight:900;
 }
 .sub-heading{
 	color:white;
@@ -2314,5 +2321,12 @@ body{
 	padding-top:0;
 	font-weight: 900;
 	font-size: 30px;
+}
+.form-style{
+	
+	background-color:#f0efeb;
+}
+.search{
+	float:left;
 }
 
