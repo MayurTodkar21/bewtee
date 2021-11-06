@@ -14,7 +14,7 @@ class UserController extends Controller
     {
         $user= Auth::user();
         
-        $path =$req->file('file')->store('docs');
+        $path =$req->file('file')->store('storage');
         $freelancer = new Freelancer;
         $freelancer->profilePhote = $path;
         $freelancer->name = $user->name;
