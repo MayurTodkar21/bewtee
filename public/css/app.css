@@ -2285,6 +2285,10 @@ body{
 	padding-left: 50px;
 	color:grey;
 }
+.display{
+	margin-top: 80px;
+	padding-top:100px;
+}
 .test{
 	color: brown;
 }

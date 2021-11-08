@@ -103,7 +103,7 @@
 
     <section class="home-display">
         <div class="container">
-            <div class="row " >
+            <div class="row  display" " >
                 <h4 class="heading">Hire expert freelancers </h4>
                 <h4 class="heading-two">for any jobs,online</h4>
                 <br>
