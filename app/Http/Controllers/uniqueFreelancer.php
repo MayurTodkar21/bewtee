@@ -15,9 +15,10 @@ class uniqueFreelancer extends Controller
             // The user is logged in...
             
             $freelancer = Freelancer::find($id);
+            $user = Auth::user();
         
     
-            return view('specificFreelancer' , ['freelancer'=> $freelancer, 'id' =>$id]);
+            return view('specificFreelancer' , ['freelancer'=> $freelancer, 'id' =>$id, 'user' => $user]);
         }else{
             
             

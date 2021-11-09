@@ -4,12 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>My Profile</title>
+        <title>Services</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         
         <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet" type="text/css" >
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel ="stylesheet" href= "../css/app.css">
         
@@ -21,44 +23,108 @@
             }
         </style>
     </head>
-    <body class="antialiased bodyColor">
-    <x-app-layout>
-    
-    {{$user->name}}
+    <body class="antialiased bodyColor " style="background-color:#e8e8e4;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand logo" href="#">BEWTEE</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              @if (Route::has('login'))
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                  <li class="nav-item ">
+                  <a class="text-sm text-gray-700 dark:text-gray-500 underline  menu-links" style="padding-right: 10px;" href ="/"> Home</a>
+                  </li>
+
+                  <li class="nav-item">
+                  <a class="text-sm text-gray-700 dark:text-gray-500 underline menu-links" href ="/"> About Us</a>
+                  </li>
+
+                  <li class="nav-item ">
+                        @auth
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline menu-links">Dashboard</a>
+                    
+                  </li>
+                  
+                  <li class="nav-item">
+                         @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline menu-links">Log in</a>
+                  </li>
+                  <li class="nav-item">
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline menu-links">Register</a>
+                        @endif
+                    
+                        
+                  </li>
+                  @endauth
+                  
+                </ul>
+                @auth 
+                <div class=" d-flex">
+                  <a class="text-sm text-gray-700 dark:text-gray-500 underline menu-links" href ="/"> {{$user->name}}</a>
+                </div>
+                @endauth
+                
+               
+                
+                
+              
+              @endif
+            </div>
+            </nav>
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+
+                    </div>
+                    <div class="col">
+                    
     <form action ="/message" method="POST">
     @csrf
         <div>
             <label for="name" hidden>freelancer's name</label>
-            <input name = "name"  value={{$freelancer->name}} >
+            <input name = "name" type="hidden" value={{$freelancer->name}} >
 
         </div>
         <div>
             <label for="name" hidden>sender's name</label>
-            <input name = "sender"  value={{$user->name}} >
+            <input name = "sender" type="hidden" value={{$user->name}} >
 
         </div>
 
         <div>
             <label for="freelancer_id" hidden>freelancer's id</label>
-            <input name = "freelancer_id"  value={{$freelancer->id}} >
+            <input name = "freelancer_id" type="hidden" value={{$freelancer->id}} >
 
         </div>
         <div>
             <label for="freelancer_id" hidden>freelancer's id</label>
-            <input name = "client_id"  value={{$user->id}} >
+            <input name = "client_id" type="hidden" value={{$user->id}} >
 
         </div>
        
 
-        <label for="message">Send {{$freelancer->name}} a Project Offer:</label>
+        <label class="display-6 " for="message">Send {{$freelancer->name}} a Project Offer:</label>
         <br>
-        <textarea name="message"  cols="30" rows="10" placeholder="Type message"></textarea>
+        <textarea name="message"  cols="60" rows="10" placeholder="Type message"></textarea>
         <br>
         <small>Click the button to send the offer to this freelancer</small>
         <br>
         <button type="submit" class="btn btn-danger"> Submit </button>
     </form>
-    </x-app-layout>
+
+                    </div>
+                    <div class="col-3">
+
+                    </div>
+                </div>
+            </div>
+    
+
+    
     
 
     
