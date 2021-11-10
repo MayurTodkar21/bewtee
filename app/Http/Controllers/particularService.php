@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Review;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 use App\Models\Service;
@@ -15,7 +16,7 @@ class particularService extends Controller
         $user = Auth::user();
         $service = Service::find($id);
         $sno = $id;
-        $review = Review::find($id);
-        return view('specificService', ['service' =>$service, 'id' =>$id , 'review' => $review, 'user' => $user]);
+        $reviews = DB::table('reviews')->where('id' ,'=', $id)->get();
+        return view('specificService', ['service' =>$service, 'id' =>$id , 'reviews' => $reviews, 'user' => $user]);
     }
 }

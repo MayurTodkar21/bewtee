@@ -98,21 +98,21 @@
             
                         </div>
                         <div style="padding-top:80px;">
-                             <h1 style="font-size: 25px; font-weight:bold">Review </h1>
-                             @if($review['id'] ==  $service['id'])
-                             <p>overall rating: {{$review['overall']}}</p>
-                             <p>on time: {{$review['onTime']}}</p>
-                             <p style="padding-bottom: 30px;">message: {{$review['message']}}</p>
-                             @elseif($review['id'] == NULL)
-                             <p>No reviews</p>
-                             @endif
+                             <h1 style="font-size: 25px; font-weight:bold ; margin-bottom: 20px;">Reviews</h1>
+                             @foreach ($reviews as $review) 
+                             <p class="starability-result" data-rating={{$review->overall}}></p> 
+
+                             <p style=" font-weight : bold">{{$review->message}}</p>
+                             <p>On Time : {{$review->onTime}}%</p>
+                             <hr>
+                             @endforeach
 
 
                             </div>
 
                             <hr>
                             <h3 style="margin-bottom: 30px;">Please leave a review</h3>
-                            <a class="bg-primary " style="padding: 5px; margin-top:30px; color:aliceblue; border-radius:5px ; " href= "/<?php echo $service['id'] ?>/review">Click Me!!</a>
+                            <a class="bg-danger " style="padding: 5px; margin-top:30px; border-radius:5px ; color:white; " href= "/<?php echo $service['id'] ?>/review">Click to leave a review</a>
 
         
                         </div>
