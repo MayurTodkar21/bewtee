@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Services</title>
+        <title>Booking</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -23,8 +23,8 @@
             }
         </style>
     </head>
-    <body class="antialiased bodyColor " style="background-color:#e8e8e4;">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body class="antialiased bodyColor " style="background-color:#e8e8e4;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
               <a class="navbar-brand logo" href="#">BEWTEE</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,60 +75,34 @@
               @endif
             </div>
             </nav>
-            <div class="container p-0">
+{{$service->title}}
+            <div class="container">
                 <div class="row">
-                    <div class="col-3" style="border-right: 1px solid black;"></div>
+                <div class="col-3">
 
-                    <div class="col" style="background-color: white;">
-                        <h2 class=" p-5" style="font-size: 40px;">
-                        {{$service['title']}}
-                        </h2>
-    
-    
-                        <div class="p-5"  style="border-bottom: 1px solid black;">
-                            <?php echo $service['id'] ?>
-                                <img src="<?php echo $service['serviceImg']?>" alt="something">
-                                <h3>service Category </h3><p>{{$service['serveCat']}}</p>
-                                <h3>Location:</h3><p>{{$service['location']}}</p>
-                                <h3>About:</h3><p>{{$service['about']}}</p>
-                                <h3>policy:</h3><p>{{$service['policy']}}</p>
-                                <h3>product:</h3><p>{{$service['product']}}</p>
-                                <h3>price:</h3><p>{{$service['price']}}</p> 
-                                <a class="bg-primary " style="padding: 5px; color:aliceblue; border-radius:5px ; " href="<?php echo $service['id']?>/booking">Book Now</a>
-            
-                        </div>
-                        <div style="padding-top:80px;">
-                             <h1 style="font-size: 25px; font-weight:bold ; margin-bottom: 20px;">Reviews</h1>
-                             @foreach ($reviews as $review) 
-                             <p class="starability-result" data-rating={{$review->overall}}></p> 
+                </div>
+                <div class="col">
+                     <div class="booking">
+                        <form action="">
+                            @csrf
+                            <label for="birthdaytime">Select appointment :</label>
+                            <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                            <br>
+                            <label for="price">Price:</label>
+                            <input type="text" value={{$service->price}}>
+                            <button type="submit">Submit</button>
 
-                             <p style=" font-weight : bold">{{$review->message}}</p>
-                             <p>On Time : {{$review->onTime}}%</p>
-                             <hr>
-                             @endforeach
+                        </form>
 
 
-                            </div>
+                    </div>
 
-                            <hr>
-                            <h3 style="margin-bottom: 30px;">Please leave a review</h3>
-                            <a class="bg-danger " style="padding: 5px; margin-top:30px; border-radius:5px ; color:white; " href= "/<?php echo $service['id'] ?>/review">Click to leave a review</a>
+                </div>
+                <div class="col-5">
 
-        
-                        </div>
-                    <div class="col-3" style="border-left: 1px solid black;"></div>
+                </div>
                 </div>
             </div>
 
-        
-
-
-
-   
-   
-       
-       
-                
-    </body>
+</body>
 </html>
-       

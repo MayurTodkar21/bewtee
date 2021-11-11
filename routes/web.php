@@ -20,6 +20,7 @@ use App\Http\Controllers\uniqueFreelancer;
 use App\Http\Controllers\particularService;
 use App\Http\Controllers\SendMessageController;
 use App\Http\Controllers\ViewMessageController;
+use App\Http\Controllers\BookingController;
 use App\Models\Freelancer;
 use App\Models\Service;
 use App\Models\User;
@@ -109,6 +110,7 @@ Route::get('/message/{id}', [Homecontroller::class, 'sendMessage']);
 Route::get('/viewmessage', [ViewMessageController::class,'viewMessage']);
 Route::get('/delete/{id}', [ViewMessageController::class,'deleteMessage']);
 Route::get('/{id}', [HomeController::class, 'sendReply']);
+Route::get('/serviceshow/{id}/booking', [BookingController::class, 'bookService']);
 
 
 Route::post('freelancer', [UserController::class, 'getData']);
