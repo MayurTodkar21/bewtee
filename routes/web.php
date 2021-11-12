@@ -124,3 +124,4 @@ Route::post('/edit/edit', [editController::class, 'updateData']);
 Route::post('/message', [SendMessageController::class, 'sendMessage']);
 Route::post('/reply', [SendMessageController::class, 'sendMessage']);
 Route::post('/job',[ServiceController::class, 'addJob']);
+Route::post('/book', [BookingController::class,'book']);

@@ -111,16 +111,7 @@
                     <option name = "rating" value="5">5</option>
                 </select>
             </div>
-            <div class= "form-group">
-                <label>on time service</label>
-                <input name ="onTime" type="percentage" value={{$person->onTime}}> 
-            </div>
-            <div>
-                work quality
-            </div>
-            <div class= "form-group">
-                budget
-            </div>
+            
             <!--
             <div>
                 <label for="photos[]">Upload your portfolio images</label>

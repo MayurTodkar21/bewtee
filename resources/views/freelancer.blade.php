@@ -120,6 +120,7 @@
             </div>
 
             <!--Bewtee Score-->
+            <!--
             <div class= "form-group ">
                 <label>Overall rating</label>
                 <select name="rating">
@@ -140,6 +141,7 @@
             <div class= "form-group">
                 budget
             </div>
+        -->
             <!--
             <div>
                 <label for="photos[]">Upload your portfolio images</label>

@@ -38,21 +38,30 @@
             <a href='service' style = "border: 1px solid black; padding:1px">Post a Service</a>
             <a href="/viewmessage" style="border: 1px solid black; padding:1px"> view messages</a>
             <a href="/tips" style="border: 1px solid black; padding:1px"> Freelancing Tips</a>
-             <div class="py-12">
-                 <h1>profile account: {{$user->name}}</h1>
+            @foreach($freelancer as $person)
+              @if($person->member_id == $user->id)
+              <div class="py-12">
+                 <h1>profile account: {{$person->name}}</h1>
                  <img src="
                     "alt="no">
-                    <h3>tagline:</h3>
+                    <h3>tagline:{{$person->tagline}}</h3>
 
-                    <h3>Location:</h3>
-                    <h3>type of influencer:</h3>
-                    <h3>Rating:</h3>
-                    <h3>Location:</h3>
-                    <h3>Skills: </h3>
-                    <h3>Travel: </h3>
+                    <h3>Location:{{$person->location}}</h3>
+                    <h3>type of influencer:{{$person->typeIn}}</h3>
+                   
+                    <h3>Skills:{{$person->skills}} </h3>
+                    <h3>Travel: {{$person->travel}}</h3>
                     <a href="#"> <h1>
                  <button><a href="/user/profile">Edit</button>
              </div>
+              
+              
+              
+              @endif
+             
+
+            @endforeach
+             
              <div class="py-12">
                  <h1>Order Settings</h1>
                  <h3>Order History: </h3>

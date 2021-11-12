@@ -36,7 +36,7 @@ class editController extends Controller
         $freelancer->travel = $req->travel;
         $freelancer->productUsed = $req->productUsed;
         $freelancer-> fnq= $req->fnq;
-        $freelancer->onTime = $req->onTime;
+        
         $freelancer->member_id= $user->id;
         $freelancer->save();
         

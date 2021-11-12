@@ -75,7 +75,7 @@
               @endif
             </div>
             </nav>
-{{$service->title}}
+
             <div class="container">
                 <div class="row">
                 <div class="col-3">
@@ -83,14 +83,21 @@
                 </div>
                 <div class="col">
                      <div class="booking">
-                        <form action="">
+                      <h3 class="b-heading">Schedule your appointment</h3>
+                      <h3 class="b-heading">{{$service->title}}</h3>
+                        <form action="/book" method="POST">
                             @csrf
-                            <label for="birthdaytime">Select appointment :</label>
-                            <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                          <div style="padding-bottom:50px">
+                            <label for="appointment">Select appointment :</label>
+                            <input type="datetime-local" id="appointment" name="appointment">
+                          </div>
+                          <div style="padding-bottom: 50px;">
+                            <label for="price">Price per day:</label>
                             <br>
-                            <label for="price">Price:</label>
-                            <input type="text" value={{$service->price}}>
-                            <button type="submit">Submit</button>
+                            <input type="text"name="price" value={{$service->price}}>
+                          </div>
+                          
+                            <button class ="btn btn-large btn-block btn-danger" type="submit">Submit</button>
 
                         </form>
 

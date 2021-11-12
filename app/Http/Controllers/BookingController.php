@@ -16,4 +16,8 @@ class BookingController extends Controller
         return view('booking', ['service' => $service, 'user'=>$user]);
 
     }
+
+    function book(Request $req){
+        return ($req);
+    }
 }

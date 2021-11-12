@@ -2590,3 +2590,7 @@ body{
 	  padding: 20px;
 	  height: 600px;
   }
+  .b-heading{
+	  padding-bottom: 30px;
+	  color: darkgray;
+  }
