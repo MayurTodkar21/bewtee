@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Booking;
 
 class BookingController extends Controller
 {
@@ -18,6 +19,13 @@ class BookingController extends Controller
     }
 
     function book(Request $req){
-        return ($req);
+        $booking = new Booking;
+        $booking->dateNtime = $req->appointment;
+        $booking->userid = $req->userid;
+        $booking->username= $req->username;
+        $booking->serviceid = $req->serviceid;
+        $booking->servicename= $req->servicename;
+        $booking->save();
+        return redirect ('/success');
     }
 }

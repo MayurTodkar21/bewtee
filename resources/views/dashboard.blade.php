@@ -9,7 +9,7 @@
             
         </div>
 
-    <div class="py-12">
+    
     </x-slot>
     
     <?php
@@ -95,6 +95,31 @@
         @elseif($user->preferrence =='client')
         <div>
               
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-1">
+
+                    </div>
+                    <div class="col">
+                        <section class="p-4" style="border: 1px solid grey; background-color:white">
+                        <h1 class="display-3">Account details:</h1>
+                         <h3>Name: {{$user->name}}</h3>
+                         <h3>Email id:{{$user->email}} </h3>
+                         <h3>Password: {{$user->password}}</h3>
+                         <h3>Address:{{$user->address}} </h3>
+                         
+                         <h1>Order Settings</h1>
+                         <h3>Order History: </h3>
+                         <h3> current Order Settings: </h3>
+                         <h3> Cancel Order:</h3>
+                         <h3>Current Oder Status:</h3>
+                         
+                        </section>
+                    </div>
+                </div>
+            </div>
             <div class="py-12">
             @foreach($service as $unique)
               @if($unique->member_id == $user->id)
@@ -115,34 +140,29 @@
                 <a href="display" style="border: 1px solid black; padding:5px">Find Beauty Service</a>
                 <a href="/viewmessage" style="border: 1px solid black; padding:1px"> view messages</a>
             </div>
-            <div class="py-12">
-                 <h1>Account details:</h1>
-                 <h3>Name: {{$user->name}}</h3>
-                 <h3>Email id:{{$user->email}} </h3>
-                 <h3>Password: {{$user->password}}</h3>
-                 <h3>Address:{{$user->address}} </h3>
-                 <a href="/user/profile" style="border: 1px solid black; padding:5px">Edit</a>
-             </div>
-             <div class="py-12">
-                 <h1>Order Settings</h1>
-                 <h3>Order History: </h3>
-                 <h3> current Order Settings: </h3>
-                 <h3> Cancel Order:</h3>
-                 <h3>Current Oder Status:</h3>
-                 <a href="/dashboard/edit" style="border: 1px solid black; padding:5px">Edit</a>
-             </div>
-             <div class="py-12">
-                 <h1>help</h1>
-                 <br>
 
-                 <h3>Call us: 234567901-1</h3>
-                 <div>
-                    <h3>Chat with us:  </h3>
-                    <br>
-                    <p>email: this@gmail.com</p>
-                    <p>telephhone:2832589205</p>
+             <footer  style="background-color: black; color:white;">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col">
+                            <h1>help</h1>
+                            <h3>Call us: 234567901-1</h3>
+                        </div>
+                        <div class="col">
+                            <h3>Chat with us:  </h3>
+                            
 
-                 </div>
+                        </div>
+                        <div class="col-2">
+                        
+                            <p>email: this@gmail.com</p>
+                            <p>telephhone:2832589205</p>
+
+                        </div>
+                    </div>
+                </div>    
+            </footer>
 
                  
              </div>

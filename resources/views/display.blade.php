@@ -113,7 +113,7 @@
                              @foreach($freelancers as $freelancer)
                                 <div class="f-info">
                                     <img src ="<?php echo asset('storage/docs/'.$freelancer->profilePhote) ?>">           
-
+                                    <?php echo asset('storage/docs/'.$freelancer->profilePhote) ?>
                                     <h1 class="f-name">{{$freelancer['name']}}</h1>
                                     <h1 class="f-tag">tagline:{{$freelancer['tagline']}}</h3>
 

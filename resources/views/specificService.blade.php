@@ -88,12 +88,12 @@
                         <div class="p-5"  style="border-bottom: 1px solid black;">
                             <?php echo $service['id'] ?>
                                 <img src="<?php echo $service['serviceImg']?>" alt="something">
-                                <h3>service Category </h3><p>{{$service['serveCat']}}</p>
-                                <h3>Location:</h3><p>{{$service['location']}}</p>
-                                <h3>About:</h3><p>{{$service['about']}}</p>
-                                <h3>policy:</h3><p>{{$service['policy']}}</p>
-                                <h3>product:</h3><p>{{$service['product']}}</p>
-                                <h3>price:</h3><p>{{$service['price']}}</p> 
+                                <p>service Category{{$service['serveCat']}}</p>
+                                <p>Location:{{$service['location']}}</p>
+                                <p>About:{{$service['about']}}</p>
+                                <p>policy:{{$service['policy']}}</p>
+                                <p>produc:{{$service['product']}}</p>
+                                <p>price:{{$service['price']}}</p>
                                 <a class="bg-primary " style="padding: 5px; color:aliceblue; border-radius:5px ; " href="<?php echo $service['id']?>/booking">Book Now</a>
             
                         </div>

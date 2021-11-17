@@ -82,22 +82,32 @@
 
                 </div>
                 <div class="col">
+                  {{$user->id}} {{$user->name}}
                      <div class="booking">
                       <h3 class="b-heading">Schedule your appointment</h3>
                       <h3 class="b-heading">{{$service->title}}</h3>
                         <form action="/book" method="POST">
                             @csrf
+                            <div><input type="hidden" name = "userid" value={{$user->id}}></div>
+                            <div><input type="hidden" name ="username" value={{$user->name}}></div>
+                            <div><input type="hidden" name= "serviceid" value={{$service->id}}></div>
+                            <div><input type="hidden" name= "servicename" value={{$service->title}}></div>
                           <div style="padding-bottom:50px">
                             <label for="appointment">Select appointment :</label>
                             <input type="datetime-local" id="appointment" name="appointment">
                           </div>
                           <div style="padding-bottom: 50px;">
-                            <label for="price">Price per day:</label>
+                            <label > Service Included: {{$service->title}}</label>
                             <br>
-                            <input type="text"name="price" value={{$service->price}}>
+
+                            <label for="price">Price:</label>
+                            <br>
+                            <div style="border: 1px solid black">
+                            <span>&#8377</span><input style="border:none" type="text"name="price" value={{$service->price}}>
+          </div>
                           </div>
                           
-                            <button class ="btn btn-large btn-block btn-danger" type="submit">Submit</button>
+                            <button class ="btn btn-large btn-block btn-danger" type="submit">Book</button>
 
                         </form>
 
