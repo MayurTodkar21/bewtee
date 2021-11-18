@@ -118,6 +118,17 @@
                     <option name ="typeIn" value="salon staff">Salon Staff</option>
                 </select>
             </div>
+            <h4>Add Some of Your Work</h4>
+            <div class= "form-group">
+                <label> Img 1</label>
+                <input type ="file" name="img1" placeholder="enter image url"> 
+            </div> <div class= "form-group">
+                <label>Img 2</label>
+                <input type ="file" name="img2" placeholder="enter image url"> 
+            </div> <div class= "form-group">
+                <label>Img 3</label>
+                <input type ="file" name="img3" placeholder="enter image url"> 
+            </div>
 
             <!--About Freelancer-->
             <div class= "form-group">

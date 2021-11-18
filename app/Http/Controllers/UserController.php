@@ -13,10 +13,35 @@ class UserController extends Controller
     function getData(Request $req)
     {
         $user= Auth::user();
+        $size = $req->file('file')->getSize();
+        $name = $req->file('file')->getClientOriginalName();
+
+        $size2 = $req->file('img2')->getSize();
+        $name2 = $req->file('img2')->getClientOriginalName();
+
+        $size3 = $req->file('img3')->getSize();
+        $name3 = $req->file('img3')->getClientOriginalName();
+
+        $size1 = $req->file('img1')->getSize();
+        $name1 = $req->file('img1')->getClientOriginalName();
+
         
-        $path =$req->file('file')->store('docs');
+
+        $req->file('file')->storeAs('public/freelancers/',$name);
+        $req->file('img1')->storeAs('public/freelancers/',$name1);
+        $req->file('img2')->storeAs('public/freelancers/',$name2);
+        $req->file('img3')->storeAs('public/freelancers/',$name3);
+        
+       
         $freelancer = new Freelancer;
-        $freelancer->profilePhote = $path;
+        $freelancer->profilePhote = $name;
+        $freelancer->size = $size;
+        $freelancer->img1 = $name1;
+        $freelancer->img2 = $name2;
+        $freelancer->img3 = $name3;
+        $freelancer->size1= $size1;
+        $freelancer->size2= $size2;
+        $freelancer->size3= $size3;
         $freelancer->name = $user->name;
         $freelancer->typeIn = $req->typeIn;
         $freelancer->tagline = $req->tagline;

@@ -110,15 +110,15 @@
                         
          
                              <div class ="col">
-                             @foreach($freelancers as $freelancer)
+                             @foreach($data as $freelancer)
                                 <div class="f-info">
-                                    <img src ="<?php echo asset('storage/docs/'.$freelancer->profilePhote) ?>">           
-                                    <?php echo asset('storage/docs/'.$freelancer->profilePhote) ?>
+                                    <img src ="<?php echo asset('storage/freelancers/'.$freelancer->profilePhote) ?>">           
+                                    
                                     <h1 class="f-name">{{$freelancer['name']}}</h1>
                                     <h1 class="f-tag">tagline:{{$freelancer['tagline']}}</h3>
 
-                                    <h1 class="f-tag">Location:{{$freelancer['location']}}</h3>
-                                    <h3>type of influencer:{{$freelancer['typeIn']}}</h3>
+                                    <!--<h1 class="f-tag">Location:{{$freelancer['location']}}</h3>
+                                    <h3>type of influencer:{{$freelancer['typeIn']}}</h3>-->
                                     <h3>Rating:{{$freelancer['rating']}}</h3>
 
                                     <a href='display/<?php echo $freelancer['id'] ?>' class="bg-primary view-button"> View </a>  

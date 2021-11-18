@@ -14,9 +14,12 @@ class ServiceController extends Controller
     //
     function addDetail(Request $req){
         $user= Auth::user();
-        $path =$req->file('file')->store('storage');
+        $size = $req->file('file')->getSize();
+        $name = $req->file('file')->getClientOriginalName();
+        $req->file('file')->storeAs('public/services/', $name);
         $service = new Service;
-        $service->serviceImg = $path;
+        $service->serviceImg = $name;
+        $service->size = $size;
         $service->title = $req->title;
         $service->about = $req->about;
         $service->serveCat = $req->servCat;

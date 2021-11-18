@@ -13,7 +13,7 @@ class ServiceDisplayController extends Controller
     function displayService(){
         $user = Auth::user();
         $data= Service::all();
-        return view('serviceshow',['services' =>$data, 'user'=>$user]);
+        return view('serviceshow',[ 'user'=>$user], compact('data'));
     }
 
     function viewJobs(){

@@ -15,6 +15,6 @@ class DisplayController extends Controller
         $data= Freelancer::all();
         //$reviewData= Review::all();
         
-        return view('display',['freelancers' =>$data, 'user' =>$user]);//, 'reviews' =>$reviewData]);
+        return view('display',[ 'user' =>$user], compact('data'));//, 'reviews' =>$reviewData]);
     }
 }

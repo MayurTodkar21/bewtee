@@ -105,10 +105,11 @@
                         
          
                              <div class ="col">
-                             @foreach($services as $service)
-                             <div class="f-info" style=" height : 400px;">
+                             @foreach($data as $service)
+                             <div class="f-info" style=" height : 600px;">
                                 <p class="f-name">{{$service['title']}}</p>
-                                <img src="<?php echo $service['serviceImg']?>" alt="something">
+                                <img src="<?php echo asset('storage/services/'.$service->serviceImg)?>" alt="something">
+                                
                                 <h3>service Category </h3><p>{{$service['serveCat']}}</p>
                                 <h3>Location:</h3><p>{{$service['location']}}</p>
                                 

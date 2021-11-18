@@ -99,39 +99,7 @@
     
 </form>
 
-<fieldset class="starability-basic">
-  <legend>First rating:</legend>
-  <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
-  <input type="radio" id="first-rate1" name="rating" value="1" />
-  <label for="first-rate1" title="Terrible">1 star</label>
-  <input type="radio" id="first-rate2" name="rating" value="2" />
-  <label for="first-rate2" title="Not good">2 stars</label>
-  <input type="radio" id="first-rate3" name="rating" value="3" />
-  <label for="first-rate3" title="Average">3 stars</label>
-  <input type="radio" id="first-rate4" name="rating" value="4" />
-  <label for="first-rate4" title="Very good">4 stars</label>
-  <input type="radio" id="first-rate5" name="rating" value="5" />
-  <label for="first-rate5" title="Amazing">5 stars</label>
-</fieldset>
 
-<fieldset class="starability-basic">
-  <legend>First rating:</legend>
-  <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
-  <input type="radio" id="second-rate1" name="rating" value="1" />
-  <label for="second-rate1" title="Terrible">1 star</label>
-  <input type="radio" id="second-rate2" name="rating" value="2" />
-  <label for="second-rate2" title="Not good">2 stars</label>
-  <input type="radio" id="second-rate3" name="rating" value="3" />
-  <label for="second-rate3" title="Average">3 stars</label>
-  <input type="radio" id="second-rate4" name="rating" value="4" />
-  <label for="second-rate4" title="Very good">4 stars</label>
-  <input type="radio" id="second-rate5" name="rating" value="5" />
-  <label for="second-rate5" title="Amazing">5 stars</label>
-</fieldset>
-<h3>Rated element name</h3>
-  <p class="starability-result" data-rating="3">
-    Rated: 3 stars
-  </p>
 
 </x-app-layout>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>

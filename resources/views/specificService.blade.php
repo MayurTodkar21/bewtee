@@ -87,7 +87,7 @@
     
                         <div class="p-5"  style="border-bottom: 1px solid black;">
                             <?php echo $service['id'] ?>
-                                <img src="<?php echo $service['serviceImg']?>" alt="something">
+                                <img src="<?php echo asset('storage/services/'.$service->serviceImg)?>" alt="something">
                                 <p>service Category{{$service['serveCat']}}</p>
                                 <p>Location:{{$service['location']}}</p>
                                 <p>About:{{$service['about']}}</p>
