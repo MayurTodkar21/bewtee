@@ -2364,12 +2364,13 @@ body{
 
 .f-info{
 	border: 1px solid #d8e2dc;
-	height: 600px;
+	height: 400px;
 	background-color: white;
 	margin-bottom: 30px;
 	box-shadow: 100px red;
 	border-radius: 20px;
 	padding: 20px;
+	padding-bottom: 0px;
 }
 .f-info:hover{
 	background-color: #d8e2dc;

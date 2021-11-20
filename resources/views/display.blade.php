@@ -81,58 +81,35 @@
     <h2 class = "sub-heading" style=" padding-left:450px">Home/Search Freelancer Makeup Artists</h2>
 
     </section>
-               
                 
-    
-    <div >
-    
-    
+   <section >
+        <form class="form-inline my-2 my-lg-0" action='/' method="POST">
+          @csrf
+         <input type="search" class="form-control mr-sm-2" style="width: 350px ; height : 25px;" name="search" placeholder="search by name, location, type of influencer">
+         <button class="btn btn-outline-primary btn-default my-2 my-sm-0"  type="submit">Search</button>
+        </form>
 
-    </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-4 " style="border-right: 2px solid black;">
-                   
-                   <section >
-                        <form class="form-inline my-2 my-lg-0" action='/' method="POST">
-                          @csrf
-                         <input type="search" class="form-control mr-sm-2" style="width: 350px ; height : 25px;" name="search" placeholder="search by name, location, type of influencer">
-                         <button class="btn btn-outline-primary btn-inline my-2 my-sm-0"  type="submit">Search</button>
-                        </form>
+   </section>
+    
                 
-                   </section>
-                    
-                </div>
-                <div class="col">
-                    <div class="container display">
-                        <div class="row">
-                        
+   <div class="container">
+       <div class="row">
+           @foreach($data as $freelancer)
          
-                             <div class ="col">
-                             @foreach($data as $freelancer)
-                                <div class="f-info">
-                                    <img src ="<?php echo asset('storage/freelancers/'.$freelancer->profilePhote) ?>">           
-                                    
-                                    <h1 class="f-name">{{$freelancer['name']}}</h1>
-                                    <h1 class="f-tag">tagline:{{$freelancer['tagline']}}</h3>
-
-                                    <!--<h1 class="f-tag">Location:{{$freelancer['location']}}</h3>
-                                    <h3>type of influencer:{{$freelancer['typeIn']}}</h3>-->
-                                    <h3>Rating:{{$freelancer['rating']}}</h3>
-
-                                    <a href='display/<?php echo $freelancer['id'] ?>' class="bg-primary view-button"> View </a>  
-
-                                </div>
-                                   
-                             @endforeach
-                             </div>    
-                        </div>
-                    </div>
-                    
+       <div class="col">
+            <div class="card" style="width: 18rem; margin-bottom:20px;margin-right:30px;">
+                <img class="card-img-top" src="<?php echo asset('storage/freelancers/'.$freelancer->profilePhote) ?>" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{$freelancer['name']}}</h5>
+                  <p class="card-text">{{$freelancer['tagline']}}</p>
+                  <a href='display/<?php echo $freelancer['id'] ?>' class="btn btn-danger">View</a>
                 </div>
             </div>
+            </div>      
+         @endforeach        
+            
         </div>
+   </div>
         
  
         
