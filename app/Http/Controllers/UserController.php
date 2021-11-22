@@ -51,6 +51,7 @@ class UserController extends Controller
         $freelancer->experience = $req->experience;
         $freelancer->travel = $req->travel;
         $freelancer->productUsed = $req->productUsed;
+        $freelancer->about = $req->About;
         $freelancer-> fnq= $req->fnq;
         //$freelancer->onTime = $req->onTime;
         $freelancer->member_id= $user->id;

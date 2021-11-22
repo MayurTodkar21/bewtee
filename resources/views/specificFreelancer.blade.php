@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Services</title>
+        <title>{{$freelancer->name}}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -75,64 +75,75 @@
               @endif
             </div>
             </nav>
-            <div class="container p-0">
+
+            <section class="p-5">
+              <div class="container">
                 <div class="row">
-                    <div class="col-3" ></div>
+                  <div class="col-6">
+                      <h2 style="font-size: 40px;">
+                            {{$freelancer->name}}
+                      </h2>
 
-                    <div class="col" style="background-color: white;">
-                    <h2 class=" p-5" style="font-size: 40px;">
-        {{$freelancer->name}}
-                        </h2>
-                        
-    
-    
-                        <div class="p-5"  >
-                            <p>{{$freelancer->id}}</p>
-                            <img src="<?php echo asset('storage/freelancers/'.$freelancer->profilePhote) ?>" alt="">
-                            <p>{{$freelancer->location}}</p>
-                            <p>{{$freelancer->tagline}}</p>
-                            <p>{{$freelancer->typeIn}}</p>
 
-                            <p>{{$freelancer->experience}}</p>
-                            <p>{{$freelancer->category}}</p>
-                            <p>{{$freelancer->skills}}</p>
-                            <p>{{$freelancer->travel}}</p>
-                            <p>{{$freelancer->productUsed}}</p>
-                            <p>{{$freelancer->prodilePhote}}</p>
-                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="<?php echo asset('storage/freelancers/'.$freelancer->img1) ?>" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo asset('storage/freelancers/'.$freelancer->img2) ?>" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo asset('storage/freelancers/'.$freelancer->img2) ?>" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+
+                      <img src="<?php echo asset('storage/freelancers/'.$freelancer->profilePhote) ?>" alt="">
+                      <h1>{{$freelancer->location}}</h1>
+                      <p>{{$freelancer->tagline}}</p>
+                      <p>{{$freelancer->typeIn}}</
+                      <p>{{$freelancer->experience}}</p>
+                      <p>{{$freelancer->category}}</p>
+                      <p>{{$freelancer->skills}}</p>
+                      <p>{{$freelancer->travel}}</p>
+                      <p>{{$freelancer->productUsed}}</p>
+                      <p>{{$freelancer->prodilePhote}}</p>
+
+                  </div>
+
+                  <div class="col-6">
+                     <h1 style="font-size: 20px; font-weight:bold; padding-bottom: 10px;">Some of {{$freelancer->name}}'s work</h1>
+                      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                       <div class="carousel-inner">
+                         <div class="carousel-item active">
+                           <img class="d-block w-100 h" src="<?php echo asset('storage/freelancers/'.$freelancer->img1) ?>" alt="First slide" style="height:300px;width:700px">
+                         </div>
+                         <div class="carousel-item">
+                           <img class="d-block w-100" src="<?php echo asset('storage/freelancers/'.$freelancer->img2) ?>" alt="Second slide" style="height:300px;width:700px">
+                         </div>
+                         <div class="carousel-item">
+                           <img class="d-block w-100" src="<?php echo asset('storage/freelancers/'.$freelancer->img2) ?>" alt="Third slide" style="height:300px;width:700px">
+                         </div>
+                       </div>
+                       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                         <span class="sr-only">Previous</span>
+                       </a>
+                       <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                         <span class="sr-only">Next</span>
+                       </a>
+                      </div>
+                      <div>
+                        <p>{{$freelancer->about}}</p>
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+           
+
+          </section>
+                 
+
+  <a href={{'/message/'.$freelancer['id']}}>
+      <div class="bg-danger contact-btn m-5">
+           Contact 
+      </div>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-                            <a href={{'/message/'.$freelancer['id']}}>
-                                <div class="bg-danger contact-btn m-5">
-                                Contact 
-                            </div>
-        </a>
                         </div>
                         
                     
-                </div>
-                <div class="col-3" ></div>
-            </div>
-            </div>
+       </div>
+                
 
         
 

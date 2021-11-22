@@ -114,7 +114,7 @@
             <div class="dropdown search-bar">
                     <label class="heading-three"> I am looking for: </label>
                     <button class="btn btn-secondary btn-light dropdown-toggle heading-three" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         Freelancer/service
+                         Freelancers
                     </button>
                     <div class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item heading-three" href="display">Freelancers</a>

@@ -180,6 +180,10 @@
 
                 </select>
             </div>
+            <div class="form-group">
+                <label for="About">About you:</label>
+                <textarea name="About" id="" cols="30" rows="10"></textarea>
+            </div>
 
             <!--Bewtee Score-->
             <!--
