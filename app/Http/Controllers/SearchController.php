@@ -18,7 +18,7 @@ class SearchController extends Controller
     function searchService(Request $req){
         $searchInput = $req->search;
 
-        $service=  DB::table('services')->where('location', '=', $searchInput)->get();
+        $service=  DB::table('services')->where('location', '=', $searchInput)->orWhere('title' , '=', $searchInput)->get();
         return view('servicesearch', ['services' => $service]);
 
 

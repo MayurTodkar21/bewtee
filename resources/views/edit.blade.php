@@ -60,6 +60,18 @@
                     <option name ="typeIn" value="salon staff">Salon Staff</option>
                 </select>
             </div>
+            <h4>Add Some of Your Work</h4>
+            <div class= "form-group">
+                <label> Img 1</label>
+                <input type ="file" name="img1" placeholder="enter image url"> 
+            </div> <div class= "form-group">
+                <label>Img 2</label>
+                <input type ="file" name="img2" placeholder="enter image url"> 
+            </div> <div class= "form-group">
+                <label>Img 3</label>
+                <input type ="file" name="img3" placeholder="enter image url"> 
+            </div>
+
             <div class= "form-group">
                 <label >Category</label>
                 <select name ="category">
@@ -99,18 +111,12 @@
 
                 </select>
             </div>
-
-            <!--Bewtee Score-->
-            <div class= "form-group ">
-                <label>Overall rating</label>
-                <select name="rating">
-                    <option name = "rating" value="1">1</option>
-                    <option name = "rating" value="2">2</option>
-                    <option name = "rating" value="3">3</option>
-                    <option name = "rating" value="4">4</option>
-                    <option name = "rating" value="5">5</option>
-                </select>
+            <div class="form-group">
+                <label for="About">About you:</label>
+                <textarea name="About" id="" cols="30" rows="10"></textarea>
             </div>
+
+            
             
             <!--
             <div>

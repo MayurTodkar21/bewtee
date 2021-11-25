@@ -111,6 +111,7 @@ Route::get('/viewmessage', [ViewMessageController::class,'viewMessage']);
 Route::get('/delete/{id}', [ViewMessageController::class,'deleteMessage']);
 Route::get('/{id}', [HomeController::class, 'sendReply']);
 Route::get('/serviceshow/{id}/booking', [BookingController::class, 'bookService']);
+Route::get('/display/{id}/booking', [BookingController::class, 'bookService']);
 
 
 Route::post('freelancer', [UserController::class, 'getData']);
