@@ -104,16 +104,15 @@
       <h1 style="font-size: 20px;">{{$freelancer['location']}}</h1>
       <hr>
       <p style="font-size:20px ; margin-bottom :20px;">{{$freelancer['tagline']}}</p>
-      <hr>
+   
       <p style = "font-size:15px">{{$freelancer['about']}}</p>
 
-      <hr>
-      <p>Travel: {{$freelancer['travel']}}</p>
+      
+      <p><p style="font-weight: bold;">Travel:</p> {{$freelancer['travel']}}</p>
         
-<hr>
 
-      <p>Skills:{{$freelancer['skills']}}</p>
-      <hr>
+      <p><p style="font-weight: bold;">Skills:</p>{{$freelancer['skills']}}</p>
+      
       <p style ="font-weight:bold">{{$freelancer['experience']}} years of Experience</p>
       <a href='display/<?php echo $freelancer['id'] ?>' class="btn btn-view">View</a>
 

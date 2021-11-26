@@ -24,54 +24,93 @@
         </style>
     </head>
     <body class=" bg-gray-100 dark:bg-gray-500">
-    <div class="relative flex items-top  bg-gray-100 dark:bg-gray-500 sm:items-center py-4 sm:pt-0">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight flex-start">
-                Services
-            </h2>
-            
-    
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                        <a class="text-sm text-gray-700 dark:text-gray-500 underline" href ="/"> Home</a>
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-                        
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand logo" href="#">BEWTEE</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              @if (Route::has('login'))
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                  <li class="nav-item ">
+                  <a class="text-sm text-gray-700 dark:text-gray-500 underline  menu-links" style="padding-right: 10px;" href ="/"> Home</a>
+                  </li>
+
+                  <li class="nav-item">
+                  <a class="text-sm text-gray-700 dark:text-gray-500 underline menu-links" href ="/"> About Us</a>
+                  </li>
+
+                  <li class="nav-item ">
+                        @auth
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline menu-links">Dashboard</a>
+                    
+                  </li>
+                  
+                  <li class="nav-item">
+                         @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline menu-links">Log in</a>
+                  </li>
+                  <li class="nav-item">
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline menu-links">Register</a>
                         @endif
-                    @endauth
+                    
+                        
+                  </li>
+                  @endauth
+                  
+                </ul>
+                @auth 
+                <div class=" d-flex">
+                  <a class="text-sm text-gray-700 dark:text-gray-500 underline menu-links" href ="/"> {{$user->name}}</a>
                 </div>
-            @endif
-    </div>
+                @endauth
+                
+               
+                
+                
+              
+              @endif
+            </div>
+            </nav>
     
     
     <!--displaying data-->
-    
-    
-    <div class ="container">
-        <div class="row"> 
-            @foreach ($services as $service)
-            <div class ="col-sm-6" style="width: 300px; height: 450px; border:1px solid black; margin: 5px">
-               
-            <h3 style="margin-top: 20px;">title</h3><p>{{$service->title}}</p>
-                <img src="<?php echo $service->serviceImg?>" alt="something">
-                <h3>service Category </h3><p>{{$service->serveCat}}</p>
-                <h3>Location:</h3><p>{{$service->location}}</p>
-                <h3>About:</h3><p>{{$service->about}}</p>
-                <h3>policy:</h3><p>{{$service->policy}}</p>
-                <h3>product:</h3><p>{{$service->product}}</p>
-                <h3>price:</h3><p>{{$service->price}</p>  
 
-                <?php //echo $service['serviceImg']?>-
-                <br>
-                <a href='serviceshow/<?php echo $service->id ?>' class="bg-primary " style="padding: 5px; color:aliceblue; border-radius:5px" > View </a>
-                 
-                    
-            </div>
-            @endforeach
-        </div>
+    <div class="container">
+     @foreach ($services as $service)
+     <div class="row">
+         <div class="col-4">
+            <img class ="card-img" src="<?php echo asset('storage/services/'.$service->serviceImg)?>" alt="something">
+         </div>
+         <div class="col">
+         <h1 style="font-size: 30px; font-weight:bold ; margin-top:20px">{{$service->title}}</h1>
+        <h1 style="font-size: 20px;">{{$service->location}}</h1>
+        <hr>      
+        <p><p style="font-weight: bold;">Product:</p> {{$service->product}}</p>
+            
+            
+        <p><p style="font-weight: bold;">Service Category:</p>{{$service->serveCat}}</p>
+            
+        
+       <div class="container">
+         <div class="row">
+         <div class="col">
+         <div ' class="btn btn-price " ><span>&#8377</span> {{$service->price}} </div>
+          
+         </div>
+         <div class="col">
+            <a href='serviceshow/<?php echo $service->id ?>' class="btn btn-view " > View </a>
+
+         </div>
+         </div>
+       </div>
+
+         </div>
+     </div>
+    @endforeach
     </div>
     
 </body>

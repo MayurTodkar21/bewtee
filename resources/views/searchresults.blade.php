@@ -24,48 +24,93 @@
         </style>
     </head>
     <body class=" bg-gray-100 dark:bg-gray-500">
-    <div class="relative flex items-top  bg-gray-100 dark:bg-gray-500 sm:items-center py-4 sm:pt-0">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight flex-start">
-                Freelancer
-            </h2>
-            
-    
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                        <a class="text-sm text-gray-700 dark:text-gray-500 underline" href ="/"> Home</a>
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-                        
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-    </div>
-    
-    
-    <!--displaying data-->
-    <div class ="container">
-        <div class="row"> 
-            @foreach ($freelancer as $result)
-            <div class ="col-sm-6" style="width: 300px; height: 250px; border:1px solid black; margin: 5px">
-                <img src="storage/{{$result->profilePhote}}" alt="">
-                <h3>{{$result->id}}</h3>
-                <h3>{{$result->name}}</h3>
-                <h3>tagline: {{$result->tagline}}</h3>
-                <h3>Location:{{$result->location}}</h3>
-                <h3>Type of influencer: {{$result->typeIn}}</h3>
-                <h3>Rating:</h3>
-                <h3>Skills:{{$result->skills}}</h3>
-                <h3>Travel:{{$result->travel}}</h3>
-                <a href='display/<?php echo $result->id ?>' class="bg-primary " style="padding: 5px; color:aliceblue; border-radius:5px" > View </a>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand logo" href="#">BEWTEE</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              @if (Route::has('login'))
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                  <li class="nav-item ">
+                  <a class="text-sm text-gray-700 dark:text-gray-500 underline  menu-links" style="padding-right: 10px;" href ="/"> Home</a>
+                  </li>
+
+                  <li class="nav-item">
+                  <a class="text-sm text-gray-700 dark:text-gray-500 underline menu-links" href ="/"> About Us</a>
+                  </li>
+
+                  <li class="nav-item ">
+                        @auth
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline menu-links">Dashboard</a>
                     
+                  </li>
+                  
+                  <li class="nav-item">
+                         @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline menu-links">Log in</a>
+                  </li>
+                  <li class="nav-item">
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline menu-links">Register</a>
+                        @endif
+                    
+                        
+                  </li>
+                  @endauth
+                  
+                </ul>
+                @auth 
+                <div class=" d-flex">
+                  <a class="text-sm text-gray-700 dark:text-gray-500 underline menu-links" href ="/"> {{$user->name}}</a>
+                </div>
+                @endauth
+                
+               
+                
+                
+              
+              @endif
             </div>
-            @endforeach
-        </div>
+    </nav>
+    
+    
+
+    
+
+<div class="container">
+   @foreach( $freelancer as $result)
+   <div class="row">
+     <div class="col-4">
+       <img class="card-img" src="<?php echo asset('storage/freelancers/'.$result->profilePhote) ?>" alt="Card image cap">
+     </div>
+     <div class="col">
+      <h1 style="font-size: 30px; font-weight:bold ; margin-top:20px">{{$result->name}}</h1>
+     
+      <h1 style="font-size: 20px;">{{$result->location}}</h1>
+      <hr>
+      <p style="font-size:20px ; margin-bottom :20px;">{{$result->tagline}}</p>
+   
+      <p style = "font-size:15px">{{$result->about}}</p>
+
+      
+      <p><p style="font-weight: bold;">Travel:</p> {{$result->travel}}</p>
+        
+
+      <p><p style="font-weight: bold;">Skills:</p>{{$result->skills}}</p>
+      
+      <p style ="font-weight:bold">{{$result->experience}} years of Experience</p>
+      <a href='display/<?php echo $result->id ?>' class="btn btn-view">View</a>
+
+     </div>
+    </div>     
+  @endforeach  
+
+   </div>
+    
     
     
 </body>

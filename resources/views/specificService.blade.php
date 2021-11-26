@@ -23,7 +23,7 @@
             }
         </style>
     </head>
-    <body class="antialiased bodyColor " style="background-color:#e8e8e4;">
+    <body class="antialiased bodyColor " style="background-color:white;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
               <a class="navbar-brand logo" href="#">BEWTEE</a>
@@ -75,50 +75,52 @@
               @endif
             </div>
             </nav>
-            <div class="container p-0">
-                <div class="row">
-                    <div class="col-3" style="border-right: 1px solid black;"></div>
-
-                    <div class="col" style="background-color: white;">
-                        <h2 class=" p-5" style="font-size: 40px;">
-                        {{$service['title']}}
-                        </h2>
-    
-    
-                        <div class="p-5"  style="border-bottom: 1px solid black;">
-                            <?php echo $service['id'] ?>
-                                <img src="<?php echo asset('storage/services/'.$service->serviceImg)?>" alt="something">
-                                <p>service Category{{$service['serveCat']}}</p>
-                                <p>Location:{{$service['location']}}</p>
-                                <p>About:{{$service['about']}}</p>
-                                <p>policy:{{$service['policy']}}</p>
-                                <p>produc:{{$service['product']}}</p>
-                                <p>price:{{$service['price']}}</p>
-                                <a class="bg-primary " style="padding: 5px; color:aliceblue; border-radius:5px ; " href="<?php echo $service['id']?>/booking">Book Now</a>
             
-                        </div>
-                        <div style="padding-top:80px;">
-                             <h1 style="font-size: 25px; font-weight:bold ; margin-bottom: 20px;">Reviews</h1>
-                             @foreach ($reviews as $review) 
-                             <p class="starability-result" data-rating={{$review->overall}}></p> 
-
-                             <p style=" font-weight : bold">{{$review->message}}</p>
-                             <p>On Time : {{$review->onTime}}%</p>
-                             <hr>
-                             @endforeach
 
 
-                            </div>
-
-                            <hr>
-                            <h3 style="margin-bottom: 30px;">Please leave a review</h3>
-                            <a class="bg-danger " style="padding: 5px; margin-top:30px; border-radius:5px ; color:white; " href= "/<?php echo $service['id'] ?>/review">Click to leave a review</a>
-
+    <section class="p-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-8">
+          <h2 style="font-size: 40px; ">
+              {{$service->title}}
+          </h2>
+          <img src="<?php echo asset('storage/services/'.$service->serviceImg)?>" style="height:600px;width:800px" alt="something">
+          </div>
         
-                        </div>
-                    <div class="col-3" style="border-left: 1px solid black;"></div>
-                </div>
-            </div>
+        <div class="col-4">
+        <div style="padding: 60px; " >
+          <h1 style="font-size: 30px; font-weight: bold">{{$service->title}}</h1>
+          <hr>
+          <h1 style="font-weight:bolder;">Service Info</h1>
+          <div style="width: 300px;">
+          <h1>Product Used: {{$service->product}}</h1>
+          <h1> Service Category: {{$service->serveCat}}</h1>
+          <h1>Location: {{$service->location}}</h1>
+          <p>Policy: {{$service->policy}}</p>
+          <p>Price: {{$service->price}}</p>
+          <p>Discount Offered:{{$service->discount}}%</p>
+          <a class="btn btn-view " href="<?php echo $service['id']?>/booking">Book Now</a>
+       </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <div style="padding-top:80px; padding-left:60px">
+                 <h1 style="font-size: 25px; font-weight:bold ; margin-bottom: 20px;">Reviews</h1>
+                 @foreach ($reviews as $review) 
+                 <p class="starability-result" data-rating={{$review->overall}}>
+                 <p style=" font-weight : bold">{{$review->message}}</p>
+                 <p>On Time : {{$review->onTime}}%</p>
+                 <hr>
+                 @endforeach
+                <hr>
+                <h3 style="margin-bottom: 30px;">Please leave a review</h3>
+                <a class="btn-review " style="padding: 5px; margin-top:30px; border-radius:5px ; color:white; " href= "/<?php echo $service['id'] ?>/review">Click to leave a review</a>
+      </div>
+      <div class="col-3" style="border-left: 1px solid black;"></div>
+      </div>
+       </div>
 
         
 

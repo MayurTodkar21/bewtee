@@ -2618,45 +2618,18 @@ body{
 .btn-view{
 	background-color: #00a3ad;
 	color: white;
-	margin-top: 100px;
+	margin-top: 50px;
+	
+}
+
+.btn-price{
+	background-color: #ed6a5a;
+	color: white;
+	margin-top: 50px;
 	
 }
 
 
-.multi-item-carousel{
-	.carousel-inner{
-	  > .item{
-		transition: 500ms ease-in-out left;
-	  }
-	  .active{
-		&.left{
-		  left:-33%;
-		}
-		&.right{
-		  left:33%;
-		}
-	  }
-	  .next{
-		left: 33%;
-	  }
-	  .prev{
-		left: -33%;
-	  }
-	  @media all and (transform-3d), (-webkit-transform-3d) {
-		> .item{
-		  // use your favourite prefixer here
-		  transition: 500ms ease-in-out left;
-		  transition: 500ms ease-in-out all;
-		  backface-visibility: visible;
-		  transform: none!important;
-		}
-	  }
-	}
-	.carouse-control{
-	  &.left, &.right{
-		background-image: none;
-	  }
-	}
-  }
+
   
  

@@ -25,8 +25,8 @@
     </head>
     <body class="antialiased bodyColor " style="background-color: white;">
     
-    <section class="f-page">
-    <nav class="navbar navbar-expand-lg navbar-dark shadow-1-strong">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
               <a class="navbar-brand logo" href="#">BEWTEE</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,58 +77,59 @@
               @endif
             </div>
             </nav>
-            <h1 class="heading">Search Makeup Services</h1>
-            <h1 class="heading" style=" padding-left:600px">Artists</h1>
-            <h2 class = "sub-heading" style=" padding-left:450px">Home/Search  Makeup Services</h2>
-    </section>
+         
+
   
 
 
-    <div class="container">
-            <div class="row">
-                <div class="col-4 " style="border-right: 2px solid black;">
-                   
-                   <section >
-                   <form action='/serviceshow' method="POST">
-                        @csrf
-                        <input type="text" class="form-control" style="width: 350px ; height : 25px;" name="search" placeholder="search by name, location, type of service">
-                        <button class="btn btn-primary"  type="submit">Search</button>
 
-                        </form>
-                
-                   </section>
-                    
-                </div>
-                <div class="col">
-                    <div class="container display">
-                        <div class="row">
-                        
-         
-                             <div class ="col">
-                             @foreach($data as $service)
-                             <div class="f-info" style=" height : 600px;">
-                                <p class="f-name">{{$service['title']}}</p>
-                                <img src="<?php echo asset('storage/services/'.$service->serviceImg)?>" alt="something">
-                                
-                                <h3>service Category </h3><p>{{$service['serveCat']}}</p>
-                                <h3>Location:</h3><p>{{$service['location']}}</p>
-                                
-                               
-                                <h3>product:</h3><p>{{$service['product']}}</p>
-                                <h3>price:</h3><p>{{$service['price']}}</p>  
+             
+             <section >
+             <form action='/serviceshow' method="POST">
+                  @csrf
+                  <input type="text" class="form-control" style="width: 350px ; height : 25px;" name="search" placeholder="search by name, location, type of service">
+                  <button class="btn btn-primary"  type="submit">Search</butto
+                  </form>
+          
+             </section>
+              
+          
 
-                                <?php //echo $service['serviceImg']?>-
-                                <br>
-                                <a href='serviceshow/<?php echo $service['id'] ?>' class="bg-primary " style="padding: 5px; color:aliceblue; border-radius:5px" > View </a>
-                             </div>
-                                @endforeach
-                             </div>    
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
+
+  <div class="container"> 
+     @foreach($data as $service)
+     <div class="row">
+       <div class="col-4">
+       <img class = "card-img" src="<?php echo asset('storage/services/'.$service->serviceImg)?>" alt="something">
+            
+       </div>
+       <div class="col">
+        <h1 style="font-size: 30px; font-weight:bold ; margin-top:20px">{{$service['title']}}</h1>
+        <h1 style="font-size: 20px;">{{$service['location']}}</h1>
+        <hr>      
+        <p><p style="font-weight: bold;">Product:</p> {{$service['product']}}</p>
+            
+            
+        <p><p style="font-weight: bold;">Service Category:</p>{{$service['serveCat']}}</p>
+            
+        
+       <div class="container">
+         <div class="row">
+         <div class="col">
+         <div ' class="btn btn-price " ><span>&#8377</span> {{$service['price']}} </div>
+          
+         </div>
+         <div class="col">
+            <a href='serviceshow/<?php echo $service['id'] ?>' class="btn btn-view " > View </a>
+
+         </div>
+         </div>
+       </div>
+      
+       </div>
+     </div>
+    @endforeach
+  </div>
 
     
   
