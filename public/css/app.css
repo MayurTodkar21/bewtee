@@ -2628,6 +2628,18 @@ body{
 	margin-top: 50px;
 	
 }
+.review-input{
+	border:none;
+	border-bottom:1px solid gray;
+}
+.review-input:hover{
+	border:none;
+	border-bottom: 1px solid blue;
+}
+.review-input::before{
+	border:none;
+}
+
 
 
 

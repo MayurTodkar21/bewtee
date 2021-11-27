@@ -15,11 +15,11 @@ class ReviewController extends Controller
         
         $review = new Review;
         $review->overall = $req->overall;
-        $review->onTime= $req->onTime;
+        
         $review->message=$req->message;
         $review->id = $req->id;
       
         $review->save();
-        return redirect('/success');
+        return redirect('/serviceshow/');
     }
 }

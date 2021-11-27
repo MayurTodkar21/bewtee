@@ -1,9 +1,7 @@
 
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-           BEWTEE
-        </h2>
+    <x-slot name="header" >
+
         <div>
             <a href='/'>Home</a>
             
@@ -17,42 +15,66 @@
     ?>
          <!--if you are a freelancer-->                        
         @if($user->preferrence =='freelancer') 
-        <div>
-            @foreach($freelancer as $person)
-              @if($person->member_id == $user->id)
-              <a href={{"edit/".$user['id']}}  style="border: 1px solid black; padding:1px">Edit</a>
-              <?php $registered = FALSE;?>
+
+           <div class="container" >
+               <div class="row">
+                 @foreach($freelancer as $person)
+                 @if($person->member_id == $user->id)
+                   <div class="col-3">
+                     <a href={{"edit/".$user['id']}}>Edit</a>
+                   </div>
+                   <?php $registered = FALSE;?>
               
               
-              @endif
+                @endif
+                @endforeach
+                @if($registered == TRUE)
              
-
-            @endforeach
-            @if($registered == TRUE)
-
-            <a href="freelancer" style="border: 1px solid black; padding:1px"  >Register as Freelancer</a>
-            @endif
-        
-       
-            <a href="viewjobs" style="border: 1px solid black; padding:1px"> view Jobs</a> 
-            <a href='service' style = "border: 1px solid black; padding:1px">Post a Service</a>
-            <a href="/viewmessage" style="border: 1px solid black; padding:1px"> view messages</a>
-            <a href="/tips" style="border: 1px solid black; padding:1px"> Freelancing Tips</a>
+                   <div class="col-3">
+                        <a href="freelancer">Register as Freelancer</a>
+                   </div>
+                @endif
+                   <div class="col-3">
+                   <a href='service'>Add a Service</a>
+                   </div>
+                   <div class="col-3">
+                   <a href="/viewmessage"> view messages</a>
+                   </div>
+                   <div class="col-3">
+                   <a href="/tips"> Freelancing Tips</a>  
+                   </div>
+                   
+               </div>
+           </div>
+    <div style="background-color: white;">
+           
             @foreach($freelancer as $person)
               @if($person->member_id == $user->id)
-              <div class="py-12">
-                 <h1>profile account: {{$person->name}}</h1>
-                 <img src="
-                    "alt="no">
-                    <h3>tagline:{{$person->tagline}}</h3>
+              <div>
+               <div class="container">
+                   <div class="row">
+                       <div class="col-4">
+                       <img src="<?php echo asset('storage/freelancers/'.$person->profilePhote) ?>" alt="" width="400px" class="margin:0px">
+                       </div>
+                       <div class="col">
+                            <h1 style="font-size:40px; font-weight:bold">Profile Account:</h>
+                            <h1 style="font-size:20px"> {{$person->name}}</h1>
 
-                    <h3>Location:{{$person->location}}</h3>
-                    <h3>type of influencer:{{$person->typeIn}}</h3>
-                   
-                    <h3>Skills:{{$person->skills}} </h3>
-                    <h3>Travel: {{$person->travel}}</h3>
-                    <a href="#"> <h1>
-                 <button><a href="/user/profile">Edit</button>
+                             <h3 style="font-size:20px" >tagline:{{$person->tagline}}</h3>
+
+                             <h3 style="font-size:20px">Location:{{$person->location}}</h3>
+                             <h3 style="font-size:20px">type of influencer:{{$person->typeIn}}</h3>
+
+                             <h3 style="font-size:20px">Skills:{{$person->skills}} </h3>
+                             <h3 style="font-size:20px">Travel: {{$person->travel}}</h3>
+                             
+                     
+
+                       </div>
+                   </div>
+               </div>
+              
+
              </div>
               
               
@@ -70,21 +92,27 @@
                  <h3>Current Oder Status:</h3>
                  <a href="/user/profile" style="border: 1px solid black; padding:5px">Edit</a>
              </div>
-             <div class="py-12">
-                 <h1>help</h1>
-                 <br>
-                 
-                 <h3>Call us: 234567901-1</h3>
-                 <div>
+    <footer  style="background-color: black; color:white;">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col">
+                    <h1>help</h1>
+                    <h3>Call us: 234567901-1</h3>
+                </div>
+                <div class="col">
                     <h3>Chat with us:  </h3>
-                    <br>
+                
+                </div>
+                <div class="col-2">
+                
                     <p>email: this@gmail.com</p>
                     <p>telephhone:2832589205</p>
+                </div>
+            </div>
+        </div>    
+    </footer>
 
-                 </div>
-
-                 
-             </div>
             
             
          </div>
@@ -93,7 +121,7 @@
 
          <!--if you are a client/employee-->
         @elseif($user->preferrence =='client')
-        <div>
+        <div style="background-color: white;">
               
 
 
@@ -141,28 +169,26 @@
                 <a href="/viewmessage" style="border: 1px solid black; padding:1px"> view messages</a>
             </div>
 
-             <footer  style="background-color: black; color:white;">
-                <div class="container">
-                    <div class="row">
-                        
-                        <div class="col">
-                            <h1>help</h1>
-                            <h3>Call us: 234567901-1</h3>
-                        </div>
-                        <div class="col">
-                            <h3>Chat with us:  </h3>
-                            
-
-                        </div>
-                        <div class="col-2">
-                        
-                            <p>email: this@gmail.com</p>
-                            <p>telephhone:2832589205</p>
-
-                        </div>
-                    </div>
-                </div>    
-            </footer>
+     <footer  style="background-color: black; color:white;">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col">
+                    <h1>help</h1>
+                    <h3>Call us: 234567901-1</h3>
+                </div>
+                <div class="col">
+                    <h3>Chat with us:  </h3>
+                
+                </div>
+                <div class="col-2">
+                
+                    <p>email: this@gmail.com</p>
+                    <p>telephhone:2832589205</p>
+                </div>
+            </div>
+        </div>    
+    </footer>
 
                  
              </div>

@@ -106,21 +106,57 @@
         </div>
       </div>
     </section>
-    <div style="padding-top:80px; padding-left:60px">
-                 <h1 style="font-size: 25px; font-weight:bold ; margin-bottom: 20px;">Reviews</h1>
-                 @foreach ($reviews as $review) 
-                 <p class="starability-result" data-rating={{$review->overall}}>
-                 <p style=" font-weight : bold">{{$review->message}}</p>
-                 <p>On Time : {{$review->onTime}}%</p>
-                 <hr>
-                 @endforeach
-                <hr>
-                <h3 style="margin-bottom: 30px;">Please leave a review</h3>
-                <a class="btn-review " style="padding: 5px; margin-top:30px; border-radius:5px ; color:white; " href= "/<?php echo $service['id'] ?>/review">Click to leave a review</a>
-      </div>
-      <div class="col-3" style="border-left: 1px solid black;"></div>
-      </div>
-       </div>
+
+    <section class="m-5">
+    <h1 style="font-size: 25px; font-weight:bold ; margin-bottom: 20px;">Reviews</h1>
+      <form action ="/{id}/review" method="POST">
+        @csrf
+        <div>
+            <label for="id" hidden>Service id</label>
+            <input name = 'id' type ="hidden" value= {{$service->id}}>
+        </div>
+        <div style="margin-bottom:0px">
+            <label for="overall" hidden>Overall Rating</label>
+            <fieldset class="starability-basic">
+                <input type="radio" id="no-rate" class="input-no-rate" name="overall" value="0" checked aria-label="No rating." />
+                <input type="radio" id="first-rate1" name="overall" value="1" />
+                <label for="first-rate1" title="Terrible">1 star</label>
+                <input type="radio" id="first-rate2" name="overall" value="2" />
+                <label for="first-rate2" title="Not good">2 stars</label>
+                <input type="radio" id="first-rate3" name="overall" value="3" />
+                <label for="first-rate3" title="Average">3 stars</label>
+                <input type="radio" id="first-rate4" name="overall" value="4" />
+                <label for="first-rate4" title="Very good">4 stars</label>
+                <input type="radio" id="first-rate5" name="overall" value="5" />
+                <label for="first-rate5" title="Amazing">5 stars</label>
+            </fieldset>
+        </div>
+        
+        
+            <label for="message" hidden>Message</label>
+            <textarea name="message" id="message" cols="120" rows="1" class="review-input"></textarea>
+            <button class="btn btn-review" style="margin-bottom: 50px" type="submit">Submit</button>
+        
+        
+      </form>
+    </section>
+
+
+    <div style=" padding-left:40px">
+        
+         @foreach ($reviews as $review) 
+         <p class="starability-result" data-rating={{$review->overall}}>
+         <p style=" font-weight : bold">{{$review->message}}</p>
+         
+         <hr>
+         @endforeach
+        <hr>
+        
+       
+    </div>
+      
+   </div>
+  </div>
 
         
 

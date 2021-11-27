@@ -135,3 +135,42 @@
         
     </body>
 </html>
+ <div class="container"> 
+     @foreach($data as $service)
+     <div class="row">
+       <div class="col-4">
+            <div class="card-img" src="<?php echo asset('storage/services/'.$service->serviceImg)?>" ></div>
+       </div>
+       <div class="col">
+        <h1 style="font-size: 30px; font-weight:bold ; margin-top:20px">{{$service['title']}}</p>
+
+       </div>
+     </div>
+    
+  </div>
+
+
+  freelancer registered or not logic
+  <!--
+            @foreach($freelancer as $person)
+              @if($person->member_id == $user->id)
+              <a href={{"edit/".$user['id']}}  style="border: 1px solid black; padding:1px">Edit</a>
+              
+              
+              <?php $registered = FALSE;?>
+              
+              
+              @endif
+             
+
+            @endforeach
+            @if($registered == TRUE)
+
+            <a href="freelancer" style="border: 1px solid black; padding:1px"  >Register as Freelancer</a>
+            @endif
+        
+       
+            
+            <a href='service' style = "border: 1px solid black; padding:1px">Add a Service</a>
+            <a href="/viewmessage" style="border: 1px solid black; padding:1px"> view messages</a>
+            <a href="/tips" style="border: 1px solid black; padding:1px"> Freelancing Tips</a>-->
