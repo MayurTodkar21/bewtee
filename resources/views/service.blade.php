@@ -25,79 +25,76 @@
     <body class="antialiased bodyColor">
     <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="color:white">
         Service Page
         </h2>
     </x-slot>
 
-
+<section style="padding-left: 100px;">
 <form action ="service" method="POST"  enctype="multipart/form-data">
     @csrf
-    <!--Image-->
-    <div class= "form-group">
-        <label for >Profile Photo</label>
-        <input type ="file" name="file"> 
+  
+     <!--Image-->
+    <div class="form-group col-md-6">
+        <label for="file">Add an image of your service:</label>
+        <input type="file" name = "file" class="form-control-file" id="exampleFormControlFile1">
     </div>
-    <div>
-        <label name= "title">Enter service title</label>
-        <input name ="title" placeholder ="enter title">
-
+    <div class="form-group col-md-6">
+        <label for="title">Enter service title:</label>
+        <input type="text" class="form-control" id="title" name="title">
+        <small id="title" class="form-text text-muted">Name of your service</small>
     </div>
-    <div>
-        <label name ="about" >About service</label>
-        <textarea name= "about"></textarea>
+    <div class="form-group mt-2 col-md-6">
+        <label for="about">About service:</label>
+        <textarea class="form-control" name = "about" rows="3" placeholder=" write few line about your service"></textarea>
     </div>
-    <div>
-        <label name = "servCat"> Service Category</label>
-        <select name= "servCat">
-            <option name="servCat" value="tech">tech</option>
-            <option name="serCat" value= "nontech"> Non tech</option>
-        </select>
-
+    <div class="form-group col-md-6">
+          <label for="servCat">Service Category: </label>
+          <select name="servCat" class="form-control">
+            <option name ="servCat" value="tech" selected>Tech</option>
+            <option name ="servCat" value="non-tech">Non-tech</option>
+          </select>
     </div>
-
-    <div>
-        <label name= "location">Location</label>
-        <select name="location">
-            <option name="location" value=" home"> home</option>    
-            <option name="location" value="salon"> salon</option>
-        </select>
+    <div class="form-group col-md-6">
+          <label for="location">Location: </label>
+          <select name="location" class="form-control">
+            <option name ="location" value="home" selected>Home</option>
+            <option name ="location" value="salon">Saloon</option>
+          </select>
     </div>
-
-    <div>
-        <label name="policy">Free Cancellation Policy</label>
-        <select name="policy">
+    <div class="form-group col-md-6">
+          <label for="policy">Free Cancellation Policy: </label>
+          <select name="policy" class="form-control">
             <option name="policy" value="1 month"> 1 month before book</option>
             <option name="policy" value="1 week "> 1 week before book</option>
             <option name="policy" value=" 1 day ">1 day before book</option>
-
-        </select>
+          </select>
     </div>
 
-    <div>
-        <label name="product">Product Used:</label>
-        <select name ="product">
-            <option value="1" name="product"> product1</option>
-            <option value="2" name = "product"> product 2</option>
-        </select>
-
+    <div class="form-group col-md-6">
+          <label for="product">Product Used:: </label>
+          <select name="product" class="form-control">
+            <option name ="product" value="1" selected>Product 1</option>
+            <option name ="productn" value="2">Product  2</option>
+          </select>
     </div>
-
-    <div>
-        <label name="price">Price of service</label>
-        <input type="number" name="price">
+    <div class="form-group col-md-6">
+        <label for="price">price of service:</label>
+        <input type="number" class="form-control" id="price" name="price" >
+   
     </div>
-
-    <div>
-        <label for="discount">Discount Offered</label>
-        <input type="number" name="discount" min="0" max="70">
-        
-
+    
+    <div class="form-group col-md-6">
+        <label for="discount">Discount Offered:</label>
+        <input type="number" class="form-control"name="discount" min="0" max="70">
+   
     </div>
-    <button type="submit">Submit</button>
+   
+    <button type="submit" class="btn btn-primary btn-lg" >Submit</button>
 
     
 </form>
+</section>
 
 
 

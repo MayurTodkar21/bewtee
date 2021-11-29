@@ -240,6 +240,26 @@
                         
                     
        </div>
+       <footer  style="background-color: black; color:white;">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col">
+                    <h1>help</h1>
+                    <h3>Call us: 234567901-1</h3>
+                </div>
+                <div class="col">
+                    <h3>Chat with us:  </h3>
+                
+                </div>
+                <div class="col-2">
+                
+                    <p>email: this@gmail.com</p>
+                    <p>telephhone:2832589205</p>
+                </div>
+            </div>
+        </div>    
+    </footer>
                 
 
         
