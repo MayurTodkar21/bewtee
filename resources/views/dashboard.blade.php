@@ -121,9 +121,31 @@
 
          <!--if you are a client/employee-->
         @elseif($user->preferrence =='client')
-        <div style="background-color: white;">
+        <div class="container">
+            <div class="row">
+                @foreach($service as $unique)
+                @if($unique->member_id == $user->id)
               
-
+                    <div class="col-3">
+                        <a href={{"editservice/".$user['id']}} >Edit</a>
+                     <div>
+                    <?php $registered = FALSE;?>
+              
+              
+                @endif
+                @endforeach
+                    <div class="col-3">
+                        <a href="display" >Hire Freelancers</a>
+                    </div> 
+                    <div class="col-3">   
+                        <a href="display" >Find Beauty Service</a>
+                    </div>   
+                    <div class="col-3"> 
+                        <a href="/viewmessage"> view messages</a>
+                    </div>
+            </div>
+        </div>
+        
 
             <div class="container">
                 <div class="row">
@@ -148,27 +170,7 @@
                     </div>
                 </div>
             </div>
-            <div class="py-12">
-            @foreach($service as $unique)
-              @if($unique->member_id == $user->id)
-              <a href={{"editservice/".$user['id']}} style="border: 1px solid black; padding:5px">Edit</a>
-              <?php $registered = FALSE;?>
-              
-              
-              @endif
-              @endforeach
-               
-           
-            <a href="job" style="border: 1px solid black; padding:5px"> Post a Job</a>
-
             
-               
-                
-                <a href="display" style="border: 1px solid black; padding:5px">Hire Freelancers</a>
-                <a href="display" style="border: 1px solid black; padding:5px">Find Beauty Service</a>
-                <a href="/viewmessage" style="border: 1px solid black; padding:1px"> view messages</a>
-            </div>
-
      <footer  style="background-color: black; color:white;">
         <div class="container">
             <div class="row">
@@ -191,12 +193,12 @@
     </footer>
 
                  
-             </div>
+    </div>
         
             
             
-        </div>
-        @endif
     </div>
+    @endif
+</div>
                         
 </x-app-layout>

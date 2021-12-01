@@ -27,56 +27,48 @@
     
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand logo" href="#">BEWTEE</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              @if (Route::has('login'))
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                  <li class="nav-item ">
-                  <a class="text-sm text-gray-700 dark:text-gray-500 underline  menu-links" style="padding-right: 10px;" href ="/"> Home</a>
-                  </li>
-
-                  <li class="nav-item">
-                  <a class="text-sm text-gray-700 dark:text-gray-500 underline menu-links" href ="/"> About Us</a>
-                  </li>
-
-                  <li class="nav-item ">
-                        @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline menu-links">Dashboard</a>
-                    
-                  </li>
-                  
-                  <li class="nav-item">
-                         @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline menu-links">Log in</a>
-                  </li>
-                  <li class="nav-item">
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline menu-links">Register</a>
-                        @endif
-                    
-                        
-                  </li>
-                  @endauth
-                  
-                </ul>
-                @auth 
-                <div class=" d-flex">
-                  <a class="text-sm text-gray-700 dark:text-gray-500 underline menu-links" href ="/"> {{$user->name}}</a>
-                </div>
-                @endauth
-                
-               
-                
-                
+      <div class="container-fluid">
+        <a class="navbar-brand logo" href="#">BEWTEE</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        @if (Route::has('login'))
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0
+            <li class="nav-item ">
+            <a class="text-sm text-gray-700 dark:text-gray-500 underline  menu-links" style="padding-right: 10px;" href ="/"> Home</a>
+            </l
+            <li class="nav-item">
+            <a class="text-sm text-gray-700 dark:text-gray-500 underline menu-links" href ="/"> About Us</a>
+            </l
+            <li class="nav-item ">
+                  @auth
+                  <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline menu-links">Dashboard</a>
               
-              @endif
-            </div>
-            </nav>
+            </li>
+            
+            <li class="nav-item">
+                   @else
+                  <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline menu-links">Log in</a>
+            </li>
+            <li class="nav-item">
+                  @if (Route::has('register'))
+                      <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline menu-links">Register</a>
+                  @endif
+              
+                  
+            </li>
+            @endauth
+            
+          </ul>
+          @auth 
+          <div class=" d-flex">
+            <a class="text-sm text-gray-700 dark:text-gray-500 underline menu-links" href ="/"> {{$user->name}}</a>
+          </div>
+          @endauth      
+          @endif
+        </div>
+    </nav>
          
 
   
@@ -84,14 +76,24 @@
 
 
              
-             <section >
-             <form action='/serviceshow' method="POST">
-                  @csrf
-                  <input type="text" class="form-control" style="width: 350px ; height : 25px;" name="search" placeholder="search by name, location, type of service">
-                  <button class="btn btn-primary"  type="submit">Search</butto
-                  </form>
-          
-             </section>
+    <section style="background-color:#d8e2dc ;" >
+    <form class="form-inline my-2 my-lg-0" action='/serviceshow' method="POST">
+         @csrf
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control input-box"  name="search" placeholder="search by name, location, type of service">
+            </div>
+            <div class="col">
+              <button class="btn btn-primary btn-default my-2 my-sm-0"  type="submit">Search</button>
+            </div>
+          </div>
+        </div>
+         
+         
+    </form>
+
+    </section>
               
           
 
@@ -130,6 +132,26 @@
      </div>
     @endforeach
   </div>
+  <footer  style="background-color: black; color:white;">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col">
+                    <h1>help</h1>
+                    <h3>Call us: 234567901-1</h3>
+                </div>
+                <div class="col">
+                    <h3>Chat with us:  </h3>
+                
+                </div>
+                <div class="col-2">
+                
+                    <p>email: this@gmail.com</p>
+                    <p>telephhone:2832589205</p>
+                </div>
+            </div>
+        </div>    
+  </footer> 
 
     
   

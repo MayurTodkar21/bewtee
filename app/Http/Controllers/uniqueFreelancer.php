@@ -16,9 +16,11 @@ class uniqueFreelancer extends Controller
             
             $freelancer = Freelancer::find($id);
             $user = Auth::user();
+            $no = $freelancer->id;
             $serviceId = $freelancer->member_id;
             $services = DB::table('services')->where('member_id','=',$serviceId)->get();
-            $reviews = DB::table('reviews')->where('id' ,'=', $id)->get();
+            $reviews = DB::table('reviews')->where('id' ,'=', $no)->get();
+           
            if($services -> isEmpty()){
                return view('addService');
            }else{

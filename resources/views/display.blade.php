@@ -84,11 +84,22 @@
 
   
                 
-   <section >
+   <section style="background-color: #d8e2dc;" >
         <form class="form-inline my-2 my-lg-0" action='/' method="POST">
           @csrf
-         <input type="search" class="form-control mr-sm-2" style="width: 350px ; height : 25px;" name="search" placeholder="search by name, location, type of influencer">
-         <button class="btn btn-outline-primary btn-default my-2 my-sm-0"  type="submit">Search</button>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <input type="search" class="form-control mr-sm-2 input-box" name="search" placeholder="search by name, location, type of influencer">
+                
+              </div>
+              <div class="col">
+              <button class="btn btn-primary btn-default my-2 my-sm-0"  type="submit">Search</button>
+              </div>
+            </div>
+          </div>
+         
+         
         </form>
 
    </section>
@@ -122,7 +133,26 @@
 
    </div>
     
-      
+   <footer  style="background-color: black; color:white;">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col">
+                    <h1>help</h1>
+                    <h3>Call us: 234567901-1</h3>
+                </div>
+                <div class="col">
+                    <h3>Chat with us:  </h3>
+                
+                </div>
+                <div class="col-2">
+                
+                    <p>email: this@gmail.com</p>
+                    <p>telephhone:2832589205</p>
+                </div>
+            </div>
+        </div>    
+    </footer>    
    
         
  

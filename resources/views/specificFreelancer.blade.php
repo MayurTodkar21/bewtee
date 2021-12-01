@@ -85,6 +85,7 @@
                       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                        <div class="carousel-inner">
                          <div class="carousel-item active">
+                           
                            <img class="d-block w-100 h" src="<?php echo asset('storage/freelancers/'.$freelancer->img1) ?>" alt="First slide" style="height:600px;width:800px">
                          </div>
                          <div class="carousel-item">
@@ -168,6 +169,7 @@
                       <div style="width: 300px;">
                       <h1>{{$freelancer->about}}</h1>
                       <p>{{$freelancer->location}}</p>
+                      {{$freelancer->id}}
                       <a href={{'/message/'.$freelancer['id']}}>
                         <div class=" contact-btn">Contact </div>
                       </a>
@@ -186,8 +188,8 @@
       <form action ="/{id}/review" method="POST">
         @csrf
         <div>
-            <label for="id" hidden>Service id</label>
-            <input name = 'id' type ="hidden" value= {{$service->id}}>
+            <label for="id" hidden>Freelancer id</label>
+            <input name = 'id' type ="hidden" value={{$freelancer->id}}>
         </div>
         <div style="margin-bottom:0px">
             <label for="overall" hidden>Overall Rating</label>
@@ -215,22 +217,17 @@
       </form>
     </section>
           <div style="padding-top:80px; padding-left:60px; margin-left:30px">
-                             <h1 style="font-size: 25px; font-weight:bold ; margin-bottom: 20px;">Reviews</h1>
-                             @foreach ($reviews as $review) 
-                             <p class="starability-result" data-rating={{$review->overall}}></p> 
+               <h1 style="font-size: 25px; font-weight:bold ; margin-bottom: 20px;">Reviews</h1>
+               @foreach ($reviews as $review) 
+               <p class="starability-result" data-rating={{$review->overall}}></p>
+               
+               <p style=" font-weight : bold">{{$review->message}} </p>
 
-                             <p style=" font-weight : bold">{{$review->message}}</p>
-                            
-                             <hr>
-                             @endforeach
-
-
-                            
-
-                            <hr>
-                           
-
-        
+              
+               <hr>
+               @endforeach
+              
+              <hr>    
           </div>
           
                  
