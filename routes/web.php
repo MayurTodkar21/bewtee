@@ -51,7 +51,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     $user = Auth::user();
     $freelancer= DB::table('freelancers')->where('member_id' ,'=', $user['id'])->get();
     $service = DB::table('services')->where('member_id' ,'=', $user['id'] )->get();
-    return view('dashboard', ['user'=>$user, 'freelancer' =>$freelancer, 'service' =>$service]);
+    $booking = DB::table('bookings')->where('userid', '=',$user['id'] )->get();
+    
+    return view('dashboard', ['user'=>$user, 'freelancer' =>$freelancer, 'service' =>$service, 'booking' =>$booking]);
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/edit', [BankingController::class,'bankDetail']);

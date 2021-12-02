@@ -14,6 +14,7 @@
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel ="stylesheet" href= "../css/app.css">
+        <link rel="stylesheet" type ="text/css" href="/css/app.css">
         
         
 
@@ -82,11 +83,13 @@
 
                 </div>
                 <div class="col">
-                  {{$user->id}} {{$user->name}}
+                  
                      <div class="booking">
-                      <h3 class="b-heading">Schedule your appointment</h3>
-                      <h3 class="b-heading">{{$service->title}}</h3>
-                        <form action="/book" method="POST">
+                       <div class="b-appointment">
+                      <h3  >Schedule your appointment</h3>
+                      </div>
+                      <h3 class="b-appointment">{{$service->title}}</h3>
+                        <form action="/book" method="POST" >
                             @csrf
                             <div><input type="hidden" name = "userid" value={{$user->id}}></div>
                             <div><input type="hidden" name ="username" value={{$user->name}}></div>
@@ -107,7 +110,7 @@
           </div>
                           </div>
                           
-                            <button class ="btn btn-large btn-block btn-danger" type="submit">Book</button>
+                            <button class ="btn btn-large btn-block btn-view" type="submit">Book</button>
 
                         </form>
 

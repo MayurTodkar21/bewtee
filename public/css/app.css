@@ -2610,6 +2610,14 @@ body{
 	 color:white;
 	 background-color: #00a3ad;
 }
+.b-appointment{
+	padding-bottom: 30px;
+	color: #00a3ad;
+	font-weight: bold;
+	font-size: 25px;
+	margin:0px;
+
+}
 .card-img{
 	height: 340px;
 	width: 340px;

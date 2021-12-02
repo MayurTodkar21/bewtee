@@ -84,13 +84,14 @@
 
             @endforeach
              
-             <div class="py-12">
-                 <h1>Order Settings</h1>
-                 <h3>Order History: </h3>
-                 <h3> current Order Settings: </h3>
-                 <h3> Cancel Order:</h3>
-                 <h3>Current Oder Status:</h3>
-                 <a href="/user/profile" style="border: 1px solid black; padding:5px">Edit</a>
+             <div class="m-5" >
+                 <h1 style="font-size:20px; font-weight:bold">Order Settings</h1>
+                 <hr>
+                 <h3 class="p-3">Order History: </h3>
+                 <h3 class="p-3"> Current Order Settings: </h3>
+                 <h3 class="p-3"> Cancel Order:</h3>
+                 <h3 class="p-3 " style="margin-bottom:10px">Current Oder Status:</h3>
+                 <a href="/user/profile" class="p-3" style="border: 1px solid black; padding:5px; margin-top:40px">Edit</a>
              </div>
     <footer  style="background-color: black; color:white;">
         <div class="container">
@@ -157,14 +158,20 @@
                         <h1 class="display-3">Account details:</h1>
                          <h3>Name: {{$user->name}}</h3>
                          <h3>Email id:{{$user->email}} </h3>
-                         <h3>Password: {{$user->password}}</h3>
-                         <h3>Address:{{$user->address}} </h3>
                          
-                         <h1>Order Settings</h1>
-                         <h3>Order History: </h3>
-                         <h3> current Order Settings: </h3>
+                         <h3>Address:{{$user->address}} </h3>
+                         <div class="m-5">
+                         <h1>Your Order</h1>
+                        
+                         @foreach($booking as $done)
+                          <strong>Name of Service</strong> {{$done->servicename}} <br>
+                          <strong>Date & Time</strong>
+                          {{$done->dateNtime}}
+                         @endforeach
+                         
                          <h3> Cancel Order:</h3>
-                         <h3>Current Oder Status:</h3>
+                         
+                         </div>
                          
                         </section>
                     </div>
