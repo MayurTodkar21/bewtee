@@ -94,6 +94,7 @@
                             <div><input type="hidden" name = "userid" value={{$user->id}}></div>
                             <div><input type="hidden" name ="username" value={{$user->name}}></div>
                             <div><input type="hidden" name= "serviceid" value={{$service->id}}></div>
+                            <div><input type="hidden" name= "member_id" value={{$service->member_id}}></div>
                             <div><input type="hidden" name= "servicename" value={{$service->title}}></div>
                           <div style="padding-bottom:50px">
                             <label for="appointment">Select appointment :</label>

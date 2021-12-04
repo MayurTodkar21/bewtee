@@ -11,6 +11,9 @@
         
         <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet" type="text/css" >
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+        <!-- CSS only -->
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel ="stylesheet" href= "../css/app.css">
@@ -23,7 +26,7 @@
             }
         </style>
     </head>
-    <body class="antialiased bodyColor " style="background-color: white;">
+    <body class="antialiased bodyColor " style="background-color: white; font-family: 'Roboto', sans-serif;">
     
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -106,8 +109,8 @@
             
        </div>
        <div class="col">
-        <h1 style="font-size: 30px; font-weight:bold ; margin-top:20px">{{$service['title']}}</h1>
-        <h1 style="font-size: 20px;">{{$service['location']}}</h1>
+        <h1 style="font-size: 30px; font-weight:bold ; margin-top:20px"><?php echo ucfirst($service['title'])?></h1>
+        <h1 style="font-size: 20px;"><?php echo ucfirst( $service['location'])?></h1>
         <hr>      
         <p><p style="font-weight: bold;">Product:</p> {{$service['product']}}</p>
             

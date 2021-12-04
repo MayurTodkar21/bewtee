@@ -2256,6 +2256,7 @@ select {
 
 body{
 	background-color:gray;
+	font-family: 'Roboto', sans-serif;
 }
 .home-display{
 	height: 700px;
@@ -2266,6 +2267,7 @@ body{
 }
 .heading{
 	font-size: 60px;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 100;
 	word-spacing: 10px;
 	padding-left: 300px;
@@ -2273,6 +2275,7 @@ body{
 }
 .heading-two{
 	font-size: 50px;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 900;
 	word-spacing: 10px;
 	padding-left: 370px;
@@ -2299,6 +2302,7 @@ body{
 }
 .sub-heading{
 	color:white;
+	font-family: 'Roboto', sans-serif;
 	font-size: 25px;
 	padding-left: 300px;
 }

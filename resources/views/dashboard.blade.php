@@ -87,11 +87,24 @@
              <div class="m-5" >
                  <h1 style="font-size:20px; font-weight:bold">Order Settings</h1>
                  <hr>
-                 <h3 class="p-3">Order History: </h3>
-                 <h3 class="p-3"> Current Order Settings: </h3>
-                 <h3 class="p-3"> Cancel Order:</h3>
-                 <h3 class="p-3 " style="margin-bottom:10px">Current Oder Status:</h3>
-                 <a href="/user/profile" class="p-3" style="border: 1px solid black; padding:5px; margin-top:40px">Edit</a>
+
+                 <strong class="p-3">Your Appointments: </strong>
+                 <div class=" container p-3">
+                     <div class="row" style="border: 1px solid gray;">
+                         <strong class="col p-2 " style="border-right: 1px solid gray;">Service Name</strong>
+                         <strong class="col p-2" style="border-right: 1px solid gray;">Client's Name</strong>
+                         <strong class="col p-2" style="border-right: 1px solid gray;">Date and Time</strong>
+                     </div>
+                 @foreach( $freelancer_bookings as $bookings)
+                    <div class="row" style="border: 1px solid gray;">
+                        <div class="col p-2" style="border-right: 1px solid gray;">{{$bookings->servicename}}</div>
+                        <div class="col p-2" style="border-right: 1px solid gray;">{{$bookings->username}}</div>
+                        <div class="col p-2" style="border-right: 1px solid gray;">{{$bookings->dateNtime}}</div>
+                    </div>
+                 @endforeach
+                </div>
+                 
+                 
              </div>
     <footer  style="background-color: black; color:white;">
         <div class="container">

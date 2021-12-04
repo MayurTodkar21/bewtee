@@ -11,6 +11,8 @@
         
         <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet" type="text/css" >
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel ="stylesheet" href= "../css/app.css">
@@ -19,7 +21,7 @@
 
         <style>
             body {
-                font-family: 'Nunito', sans-serif;
+                font-family: 'Roboto', sans-serif;;
             }
         </style>
     </head>
@@ -83,14 +85,14 @@
         <div class="row">
           <div class="col-8">
           <h2 style="font-size: 40px; ">
-              {{$service->title}}
+              <?php echo ucfirst($service->title)?>
           </h2>
           <img src="<?php echo asset('storage/services/'.$service->serviceImg)?>" style="height:600px;width:800px" alt="something">
           </div>
         
         <div class="col-4">
         <div style="padding: 60px; " >
-          <h1 style="font-size: 30px; font-weight: bold">{{$service->title}}</h1>
+          <h1 style="font-size: 30px; font-weight: bold"><?php echo ucfirst($service->title)?></h1>
           <hr>
           <h1 style="font-weight:bolder;">Service Info</h1>
           <div style="width: 300px;">
@@ -157,6 +159,27 @@
       
    </div>
   </div>
+
+  <footer  style="background-color: black; color:white;">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col">
+                    <h1>help</h1>
+                    <h3>Call us: 234567901-1</h3>
+                </div>
+                <div class="col">
+                    <h3>Chat with us:  </h3>
+                
+                </div>
+                <div class="col-2">
+                
+                    <p>email: this@gmail.com</p>
+                    <p>telephhone:2832589205</p>
+                </div>
+            </div>
+        </div>    
+    </footer>
 
         
 

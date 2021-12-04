@@ -24,6 +24,7 @@ class BookingController extends Controller
         $booking->userid = $req->userid;
         $booking->username= $req->username;
         $booking->serviceid = $req->serviceid;
+        $booking->member_id = $req->member_id;
         $booking->servicename= $req->servicename;
         $booking->save();
         return redirect ('/success');
