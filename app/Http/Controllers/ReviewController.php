@@ -20,6 +20,6 @@ class ReviewController extends Controller
         $review->id = $req->id;
       
         $review->save();
-        return redirect('/serviceshow/');
+        return redirect('/');
     }
 }

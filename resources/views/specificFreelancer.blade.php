@@ -216,7 +216,7 @@
         
       </form>
     </section>
-          <div style="padding-top:80px; padding-left:60px; margin-left:30px">
+          <div  style="margin-bottom:60px;padding-top:80px; padding-left:60px; margin-left:30px">
                <h1 style="font-size: 25px; font-weight:bold ; margin-bottom: 20px;">Reviews</h1>
                @foreach ($reviews as $review) 
                <p class="starability-result" data-rating={{$review->overall}}></p>

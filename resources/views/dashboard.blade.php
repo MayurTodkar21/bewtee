@@ -1,20 +1,13 @@
 
 <x-app-layout>
-    <x-slot name="header" >
 
-        <div>
-            <a href='/'>Home</a>
-            
-        </div>
-
-    
-    </x-slot>
     
     <?php
       $registered = TRUE;
     ?>
          <!--if you are a freelancer-->                        
         @if($user->preferrence =='freelancer') 
+        <x-slot name="header">
 
            <div class="container" >
                <div class="row">
@@ -46,6 +39,7 @@
                    
                </div>
            </div>
+        </x-slot>
     <div style="background-color: white;">
            
             @foreach($freelancer as $person)
@@ -99,7 +93,7 @@
                     <div class="row" style="border: 1px solid gray;">
                         <div class="col p-2" style="border-right: 1px solid gray;">{{$bookings->servicename}}</div>
                         <div class="col p-2" style="border-right: 1px solid gray;">{{$bookings->username}}</div>
-                        <div class="col p-2" style="border-right: 1px solid gray;">{{$bookings->dateNtime}}</div>
+                        <div class="col p-2" style="border-right: 1px solid gray;">{{$bookings->dateNtime}}  <a href={{"/delete_booking/".$bookings->id}}>Delete</a></div>
                     </div>
                  @endforeach
                 </div>
@@ -135,7 +129,9 @@
 
          <!--if you are a client/employee-->
         @elseif($user->preferrence =='client')
-        <div class="container">
+        <x-slot name="header" >
+
+        <div class="container " >
             <div class="row">
                 @foreach($service as $unique)
                 @if($unique->member_id == $user->id)
@@ -157,8 +153,16 @@
                     <div class="col-3"> 
                         <a href="/viewmessage"> view messages</a>
                     </div>
+                    <div class ="col-3">
+                        <a href="/">Home</a>
+                    </div>
+                    
             </div>
         </div>
+
+
+        </x-slot>
+ 
         
 
             <div class="container">
@@ -173,18 +177,29 @@
                          <h3>Email id:{{$user->email}} </h3>
                          
                          <h3>Address:{{$user->address}} </h3>
-                         <div class="m-5">
-                         <h1>Your Order</h1>
-                        
-                         @foreach($booking as $done)
-                          <strong>Name of Service</strong> {{$done->servicename}} <br>
-                          <strong>Date & Time</strong>
-                          {{$done->dateNtime}}
-                         @endforeach
-                         
-                         <h3> Cancel Order:</h3>
-                         
+                         <div class="m-5" >
+                             <h1 style="font-size:20px; font-weight:bold">Order Settings</h1>
+                             <hr>
+
+                             <strong class="p-3">Your Appointments: </strong>
+                             <div class=" container p-3">
+                                 <div class="row" style="border: 1px solid gray;">
+                                     <strong class="col p-2 " style="border-right: 1px solid gray;">Service Name</strong>
+                                     <strong class="col p-2" style="border-right: 1px solid gray;">Freelancer's Id</strong>
+                                     <strong class="col p-2" style="border-right: 1px solid gray;">Date and Time</strong>
+                                 </div>
+                             @foreach($booking as $done)
+                                <div class="row" style="border: 1px solid gray;">
+                                    <div class="col p-2" style="border-right: 1px solid gray;">{{$done->servicename}}</div>
+                                    <div class="col p-2" style="border-right: 1px solid gray;">{{$done->member_id}}</div>
+                                    <div class="col p-2" style="border-right: 1px solid gray;">{{$done->dateNtime}}</div>
+                                </div>
+                             @endforeach
+                            </div>
+
+
                          </div>
+                         
                          
                         </section>
                     </div>

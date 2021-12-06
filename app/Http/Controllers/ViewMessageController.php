@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Booking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -23,5 +23,10 @@ class ViewMessageController extends Controller
         $data->delete();
         return redirect('/viewmessage');
 
+    }
+    function deleteBooking($id){
+        $booking = Booking::find($id);
+        $booking->delete();
+        return redirect('/dashboard');
     }
 }

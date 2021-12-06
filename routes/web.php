@@ -111,6 +111,7 @@ Route::get('editservice/{id}', [serviceEditController::class, 'editServiceData']
 Route::get('/message/{id}', [Homecontroller::class, 'sendMessage']);
 Route::get('/viewmessage', [ViewMessageController::class,'viewMessage']);
 Route::get('/delete/{id}', [ViewMessageController::class,'deleteMessage']);
+Route::get('/delete_booking/{id}',[ViewMessageController::class,'deleteBooking']);
 Route::get('/{id}', [HomeController::class, 'sendReply']);
 Route::get('/serviceshow/{id}/booking', [BookingController::class, 'bookService']);
 Route::get('/display/{id}/booking', [BookingController::class, 'bookService']);
