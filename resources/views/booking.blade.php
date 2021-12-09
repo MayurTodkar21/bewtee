@@ -11,6 +11,7 @@
         
         <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet" type="text/css" >
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel ="stylesheet" href= "../css/app.css">
@@ -18,11 +19,7 @@
         
         
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
+        
     </head>
 <body class="antialiased bodyColor " style="background-color:#e8e8e4;">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -86,9 +83,9 @@
                   
                      <div class="booking">
                        <div class="b-appointment">
-                      <h3  >Schedule your appointment</h3>
+                      <h3  >SCHEDULE YOUR APPOINTMENT</h3>
                       </div>
-                      <h3 class="b-appointment">{{$service->title}}</h3>
+                      <h3 class="mb-3" style="font-weight:bold ; font-size:20px" >SERVICE: <?php echo ucfirst($service->title)?></h3>
                         <form action="/book" method="POST" >
                             @csrf
                             <div><input type="hidden" name = "userid" value={{$user->id}}></div>
@@ -100,14 +97,13 @@
                             <label for="appointment">Select appointment :</label>
                             <input type="datetime-local" id="appointment" name="appointment">
                           </div>
-                          <div style="padding-bottom: 50px;">
-                            <label > Service Included: {{$service->title}}</label>
-                            <br>
+                          <div style="padding-bottom: 30px;">
+                            
 
                             <label for="price">Price:</label>
                             <br>
                             <div style="border: 1px solid black">
-                            <span>&#8377</span><input style="border:none" type="text"name="price" value={{$service->price}}>
+                            <span>&#8377</span><input style="border:none" type="text"name="price" disabled value={{$service->price}}>
           </div>
                           </div>
                           

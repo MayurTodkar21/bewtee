@@ -92,16 +92,16 @@
         
         <div class="col-4">
         <div style="padding: 60px; " >
-          <h1 style="font-size: 30px; font-weight: bold"><?php echo ucfirst($service->title)?></h1>
+          <h1 class ="mb-2" style="font-size: 30px; font-weight: bold"><?php echo ucfirst($service->title)?></h1>
           <hr>
-          <h1 style="font-weight:bolder;">Service Info</h1>
+          <h1 class ="mb-2" style="font-weight:bolder;">Service Info</h1>
           <div style="width: 300px;">
-          <h1>Product Used: {{$service->product}}</h1>
-          <h1> Service Category: {{$service->serveCat}}</h1>
-          <h1>Location: {{$service->location}}</h1>
-          <p>Policy: {{$service->policy}}</p>
-          <p>Price: {{$service->price}}</p>
-          <p>Discount Offered:{{$service->discount}}%</p>
+          <h1 class ="mb-2" >Product Used: {{$service->product}}</h1>
+          <h1 class ="mb-2"> Service Category: {{$service->serveCat}}</h1>
+          <h1 class ="mb-2">Location: {{$service->location}}</h1>
+          <p class ="mb-2">Policy: {{$service->policy}}</p>
+          <p class ="mb-2">Price: {{$service->price}}</p>
+          <p class ="mb-2">Discount Offered:{{$service->discount}}%</p>
           <a class="btn btn-view " href="<?php echo $service['id']?>/booking">Book Now</a>
        </div>
         </div>
@@ -144,12 +144,13 @@
     </section>
 
 
-    <div style=" padding-left:40px">
+    <div style=" padding-left:40px; margin-bottom:60px">
         
          @foreach ($reviews as $review) 
+         <div class="m-3">
          <p class="starability-result" data-rating={{$review->overall}}>
          <p style=" font-weight : bold">{{$review->message}}</p>
-         
+         </div> 
          <hr>
          @endforeach
         <hr>

@@ -78,7 +78,7 @@
 
     <div class="container">
      @foreach ($services as $service)
-     <div class="row">
+     <div class="row display-card">
          <div class="col-4">
             <img class ="card-img" src="<?php echo asset('storage/services/'.$service->serviceImg)?>" alt="something">
          </div>
